@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       date:
-        description: '留空使用今天；历史日期 YYYY-MM-DD'
+        description: '留空使用今天；历史日期格式 YYYY-MM-DD'
         required: false
         type: string
 permissions:
@@ -18,16 +18,19 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: 展开项目
+      - name: 展开首次上传的完整项目
         run: |
-          node -e 'const fs=require("fs"),path=require("path");if(fs.existsSync("project-bundle.json")){const bundle=JSON.parse(fs.readFileSync("project-bundle.json"));const files=bundle.files||JSON.parse(require("zlib").gunzipSync(Buffer.from(bundle.archive,"base64")));for(const [name,data] of Object.entries(files)){if(name.startsWith(".github/"))continue;const target=path.resolve(name);if(!target.startsWith(process.cwd()+path.sep))throw Error("invalid path");if(!fs.existsSync(target)){fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,Buffer.from(data,"base64"));}}}'
-      - uses: actions/cache@v4
+          if [ -f project-bundle.json ]; then
+            node -e 'const fs=require("fs"),path=require("path");const bundle=JSON.parse(fs.readFileSync("project-bundle.json"));const files=bundle.files||JSON.parse(require("zlib").gunzipSync(Buffer.from(bundle.archive,"base64")));for(const [name,data] of Object.entries(files)){if(name.startsWith(".github/")||name.startsWith("public/data/"))continue;const target=path.resolve(name);if(!target.startsWith(process.cwd()+path.sep))throw Error("invalid path");fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,Buffer.from(data,"base64"));}'
+          fi
+      - name: 缓存行情
+        uses: actions/cache@v4
         with:
           path: .cache
           key: quotes-${{ github.run_id }}
@@ -45,11 +48,11 @@ jobs:
           else
             node scan.js
           fi
-      - name: 保存结果
+      - name: 保存结果和状态
         env:
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
-          node -e 'require("fs").writeFileSync("public/data/site.json",JSON.stringify({repository:process.env.GITHUB_REPOSITORY,deployed:true}))'
+          node -e 'require("fs").writeFileSync("public/data/site.json",JSON.stringify({repository:process.env.GITHUB_REPOSITORY}))'
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
@@ -65,6 +68,9 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
+      - name: 标记扫描异常
+        if: steps.screen.outcome == 'failure'
+        run: echo '数据不完整或失败，网页已展示状态。请查看运行日志。'
   deploy:
     needs: scan
     runs-on: ubuntu-latest
