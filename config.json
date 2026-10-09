@@ -1,0 +1,34 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8787,
+    "scanAt": "15:25"
+  },
+  "strategy": {
+    "version": "v0.2-eod-observation",
+    "breakoutDays": 10,
+    "stopDays": 5,
+    "maxPriceRisk": 0.05,
+    "maxEntryOverBreakout": 0.02,
+    "allowedCodePrefixes": [
+      "000",
+      "001",
+      "002",
+      "003",
+      "300",
+      "301",
+      "600",
+      "601",
+      "603",
+      "605"
+    ],
+    "minListingDays": 60
+  },
+  "scanner": {
+    "concurrency": 6,
+    "timeoutMs": 12000,
+    "retries": 2,
+    "minimumCoverage": 0.98,
+    "maxBoards": 30
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "a-share-watch", "version": "0.2.0", "private": true,
+  "description": "A股收盘观察系统",
+  "scripts": {"start":"node server.js","scan":"node scan.js","test":"node --test test/*.test.js"},
+  "engines": {"node":">=22"}
+}

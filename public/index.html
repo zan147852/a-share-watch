@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#124c43"><title>A股观察台</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><div class="wrap mast"><a class="brand" href="./"><span class="mark">A</span><div>观察台<small>A股收盘筛选</small></div></a><span class="run-badge" id="runBadge">正在读取状态</span></div></header>
+<main class="wrap">
+<section class="hero"><div><p class="kicker">A股 · 主板 / 创业板</p><h1>收盘筛选</h1><p class="intro" id="reportDate">收盘观察 v0.2</p></div><div class="controls"><label for="dateSelect">查看日期</label><div class="control-row"><select id="dateSelect"></select><button id="refresh">刷新结果</button></div><button id="scan" class="primary" hidden>运行收盘扫描</button><a id="actionsLink" hidden target="_blank" rel="noopener">打开云端运行记录 ↗</a><span id="dateNote"></span></div></section>
+<section class="metrics"><div><span>扫描覆盖</span><strong id="coverage">—</strong><small id="scanned">尚未扫描</small></div><div><span>价格候选</span><strong id="count">—</strong><small>候选仍需完整条件复核</small></div><div><span>扫描完成时间</span><strong id="updated">—</strong><small>北京时间</small></div><div><span>自动计划</span><strong>15:25</strong><small id="schedule">工作日收盘后，云端配置待完成</small></div></section>
+<section class="status" id="status" aria-live="polite"><span id="statusText">正在读取结果</span><progress id="progress" hidden></progress></section>
+<div class="section-title"><div><p class="kicker">01 / 价格初筛</p><h2>候选清单</h2></div><select id="filter" aria-label="筛选候选"><option value="all">全部候选</option><option value="main">主板</option><option value="growth">创业板</option><option value="minute">30分钟已核对</option></select></div>
+<div id="empty" class="empty"></div><div id="cards" class="cards"></div>
+<section class="split">
+<div class="panel"><p class="kicker">02 / 板块证据</p><h2>指数与题材关联</h2><p class="note">当前动态成分；事前题材名单仍待固定。</p><div id="boards"></div></div>
+<div class="panel"><p class="kicker">03 / 运行记录</p><h2>筛选结果与数据异常</h2><div id="exclusions"></div><details><summary id="errorsLabel">查看数据异常</summary><div id="errors"></div></details></div>
+</section>
+<section class="panel"><p class="kicker">04 / 昨日跟踪</p><h2>候选后续表现</h2><p class="note">收盘到收盘变化，非实际成交收益。</p><div id="followups"></div></section>
+<section class="panel"><p class="kicker">05 / 催化线索</p><h2>消息记录</h2><p id="newsStatus" class="note">消息线索尚未采集</p><div id="news"></div></section>
+<footer><p>版本 v0.2 · 收盘观察模式</p><p>消息/业务核验、事前题材池、中军、老龙与首板留存尚未自动完成。名单是研究观察结果，参数尚未证明具有盈利能力。手机锁屏推送未接入。</p><details><summary>数据与运行说明</summary><p>日线使用腾讯行情，东方财富作为备用；板块与分钟数据来自东方财富公开接口。扫描失败和休市数据缺失分别显示。GitHub定时任务可能延迟，网页展示实际完成时间。</p><div id="limitations"></div></details></footer>
+</main><script src="app.js"></script></body></html>
