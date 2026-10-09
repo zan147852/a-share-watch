@@ -29,6 +29,7 @@
     "timeoutMs": 12000,
     "retries": 2,
     "minimumCoverage": 0.98,
+    "maxDailyMinutes": 20,
     "maxBoards": 30
   }
 }

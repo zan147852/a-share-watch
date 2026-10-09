@@ -9,7 +9,7 @@ const server=http.createServer((req,res)=>{
  if(url.pathname==='/api/status')return json(res,200,store.read(path.join(data,'status.json'),{status:'idle',phase:'尚未运行'}));
  const target=path.resolve(web,decodeURIComponent(url.pathname==='/'?'index.html':url.pathname.slice(1)));
  if(target!==web&&!target.startsWith(web+path.sep))return json(res,403,{error:'禁止访问'});
- fs.readFile(target,(err,body)=>{if(err)return json(res,404,{error:'文件尚未生成'});const type={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8'}[path.extname(target)]||'application/octet-stream';res.writeHead(200,{'Content-Type':type,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(body);});
+ fs.readFile(target,(err,body)=>{if(err)return json(res,404,{error:'文件尚未生成'});const type={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml'}[path.extname(target)]||'application/octet-stream';res.writeHead(200,{'Content-Type':type,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(body);});
 });
 let scheduledDate='';
 setInterval(()=>{const local=time.chinaNow(),today=local.slice(0,10),day=new Date(today+'T12:00:00Z').getUTCDay();if(day>=1&&day<=5&&local.slice(11,16)>=config.server.scanAt&&scheduledDate!==today&&!active){scheduledDate=today;launch(today);}},30000);

@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-09T04:14:16.634Z",
+  "updatedAt": "2026-10-09T04:31:10.333Z",
   "dates": [
     {
       "date": "2026-10-08",
-      "status": "partial",
-      "candidateCount": 33,
-      "generatedAt": "2026-10-09T04:14:16.630Z",
-      "coverage": 0.22923738402353475
+      "status": "complete",
+      "candidateCount": 65,
+      "generatedAt": "2026-10-09T04:31:10.331Z",
+      "coverage": 0.997510749038244
     }
   ]
 }
