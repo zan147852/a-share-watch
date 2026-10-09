@@ -1,0 +1,77 @@
+name: 收盘筛选与网页更新
+on:
+  schedule:
+    - cron: '25 7 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '留空使用今天；历史日期 YYYY-MM-DD'
+        required: false
+        type: string
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: daily-screen
+  cancel-in-progress: false
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: 展开项目
+        run: |
+          node -e 'const fs=require("fs"),path=require("path");if(fs.existsSync("project-bundle.json")){const bundle=JSON.parse(fs.readFileSync("project-bundle.json"));const files=bundle.files||JSON.parse(require("zlib").gunzipSync(Buffer.from(bundle.archive,"base64")));for(const [name,data] of Object.entries(files)){if(name.startsWith(".github/"))continue;const target=path.resolve(name);if(!target.startsWith(process.cwd()+path.sep))throw Error("invalid path");if(!fs.existsSync(target)){fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,Buffer.from(data,"base64"));}}}'
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: quotes-${{ github.run_id }}
+          restore-keys: quotes-
+      - name: 测试规则
+        run: node --test test/*.test.js
+      - name: 自动扫描
+        id: screen
+        continue-on-error: true
+        env:
+          TARGET_DATE: ${{ inputs.date }}
+        run: |
+          if [ -n "$TARGET_DATE" ]; then
+            node scan.js --date "$TARGET_DATE"
+          else
+            node scan.js
+          fi
+      - name: 保存结果
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          node -e 'require("fs").writeFileSync("public/data/site.json",JSON.stringify({repository:process.env.GITHUB_REPOSITORY,deployed:true}))'
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          if ! git diff --cached --quiet; then
+            git commit -m "Update daily screen results"
+            git push
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: screening-data
+          path: public/data
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+  deploy:
+    needs: scan
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 更新手机网页
+        id: deployment
+        uses: actions/deploy-pages@v4
