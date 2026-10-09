@@ -1,10 +1,10 @@
 {
   "date": "2026-10-09",
   "status": "complete",
-  "startedAt": "2026-10-09T09:15:41.062Z",
+  "startedAt": "2026-10-09T14:27:36.960Z",
   "phase": "收盘价格扫描完成，完整策略条件仍待核验",
   "done": 4419,
   "total": 4419,
-  "generatedAt": "2026-10-09T09:23:18.957Z",
+  "generatedAt": "2026-10-09T14:28:35.944Z",
   "candidateCount": 66
 }

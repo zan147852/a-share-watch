@@ -1,7 +1,7 @@
 {
   "date": "2026-10-09",
   "version": "v0.2-eod-observation",
-  "generatedAt": "2026-10-09T09:23:18.957Z",
+  "generatedAt": "2026-10-09T14:28:35.944Z",
   "priceBasis": "前复权计算结构，按目标日未复权收盘换算显示价格",
   "mode": "收盘观察；不重现盘中全部信号",
   "news": {
@@ -14086,47 +14086,22 @@
       "count": 101
     },
     {
-      "key": "error",
-      "label": "请求失败",
-      "count": 10
+      "key": "missing",
+      "label": "缺目标日",
+      "count": 7
     },
     {
       "key": "listing",
       "label": "上市历史少于60交易日",
       "count": 17
+    },
+    {
+      "key": "error",
+      "label": "请求失败",
+      "count": 3
     }
   ],
   "errors": [
-    {
-      "code": "600293",
-      "name": "三峡新材",
-      "error": "socket hang up"
-    },
-    {
-      "code": "601059",
-      "name": "信达证券",
-      "error": ""
-    },
-    {
-      "code": "601198",
-      "name": "东兴证券",
-      "error": "socket hang up"
-    },
-    {
-      "code": "000582",
-      "name": "北部湾港",
-      "error": ""
-    },
-    {
-      "code": "000668",
-      "name": "荣丰控股",
-      "error": "socket hang up"
-    },
-    {
-      "code": "002388",
-      "name": "新亚制程",
-      "error": "socket hang up"
-    },
     {
       "code": "002813",
       "name": "路畅科技",
@@ -14135,16 +14110,11 @@
     {
       "code": "002860",
       "name": "星帅尔",
-      "error": "socket hang up"
+      "error": ""
     },
     {
       "code": "300082",
       "name": "奥克股份",
-      "error": ""
-    },
-    {
-      "code": "300773",
-      "name": "拉卡拉",
       "error": "socket hang up"
     }
   ],
