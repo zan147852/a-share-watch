@@ -27,7 +27,7 @@ test('实际涨停按分四舍五入，复权差异大的除权日不能误当�
  const adjusted=raw.map(x=>({...x}));adjusted[2].close=11.1;assert.equal(m.exactLimitHistory(raw,adjusted,'600001',date).today,null);
 });
 function previous(overrides={}){return {schema:1,date:previousDate,frozenAt:'2026-10-08T07:40:00Z',retrospective:false,snapshot:{firstBoards:[{code:'600001',name:'甲'},{code:'600002',name:'乙'}],leaders:[{code:'600001',name:'甲'}],capacity:[{code:'600003',name:'丙'}],complete:{firstBoards:true,capacity:true}},...overrides};}
-const nextFeatures=[{code:'600001',openingPremium:.03,pct:.02},{code:'600002',openingPremium:0,pct:-.01},{code:'600003',openingPremium:-.01,pct:.01}];
+const nextFeatures=[{code:'600001',previousDate,openingPremium:.03,pct:.02},{code:'600002',previousDate,openingPremium:0,pct:-.01},{code:'600003',previousDate,openingPremium:-.01,pct:.01}];
 test('次日用冻结全名单为分母，缺一只保持未知而非缩分母',()=>{
  const r=m.validateNext(previous(),nextFeatures,date,previousDate,settings);assert.equal(r.status,'pass');assert.equal(r.retention,.5);
  assert.equal(m.validateNext(previous(),nextFeatures.slice(0,1),date,previousDate,settings).status,'unknown');
@@ -37,6 +37,7 @@ test('次日拒绝事后重扫、开盘后冻结、错前一交易日',()=>{
  for(const p of [previous({retrospective:true}),previous({frozenAt:'2026-10-09T02:31:00Z'}),previous({date:'2026-10-07'})])assert.equal(m.validateNext(p,nextFeatures,date,previousDate,settings).status,'pending');
 });
 test('昨天首板范围不完整也不能事后确认留存',()=>{const prior=previous();prior.snapshot.complete.firstBoards=false;assert.equal(m.validateNext(prior,nextFeatures,date,previousDate,settings).status,'unknown');});
+test('停牌跨日的涨跌幅不能冒充隔日留存',()=>{const stale=nextFeatures.map(f=>({...f,previousDate:'2026-09-30'}));assert.equal(m.validateNext(previous(),stale,date,previousDate,settings).status,'unknown');});
 function themeInput(){
  const members=['600001','600002','600003'].map((code,i)=>({code,name:'示例'+i}));
  const features=members.map(x=>({...x,date,pct:.04,previousPct:.04,breakout:true,volumeRatio:1.5,cap:2e10,capAsOf:date,amount:1e9,possibleLimit:true,approxBoards:[]}));
@@ -53,7 +54,7 @@ test('历史市值、缺成分、缺涨停历史均不能确认为通过',()=>{
 });
 test('五步共振仅在全部规则证据齐备时出现，消息始终保留事实复核',()=>{
  const input=themeInput();input.news={complete:true,items:[{title:'工信部发布机器人实施方案',publishedAt:date+'T01:00:00Z',content:'',stockCodes:[]}]};input.index={passed:true};input.prior=previous();input.raw['600001'].oldEvents=['2026-08-01','2026-08-02','2026-08-03'];input.raw['600001'].priorMaxChain=2;
- input.features=input.features.map(f=>({...f,openingPremium:.03}));
+ input.features=input.features.map(f=>({...f,previousDate,openingPremium:.03}));
  const result=m.evaluateTheme(input);assert.equal(result.state,'五步规则共振，待事实复核');assert.equal(result.steps[0].status,'review');assert.equal(result.passedCount,4);
 });
 test('非产业分类排除，固态题材不因泛储能报道自动获得催化',()=>{assert.equal(m.isTheme('准ST股'),false);assert.equal(m.isTheme('央企50'),false);assert.equal(m.isTheme('固态电池'),true);assert.equal(m.matchNews('固态电池',{items:[{title:'储能订单增长',publishedAt:date+'T01:00:00Z'}]},date).length,0);});
