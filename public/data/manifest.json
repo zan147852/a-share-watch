@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-09T04:31:10.333Z",
+  "updatedAt": "2026-10-09T06:01:04.303Z",
   "dates": [
     {
       "date": "2026-10-08",
       "status": "complete",
       "candidateCount": 65,
-      "generatedAt": "2026-10-09T04:31:10.331Z",
+      "generatedAt": "2026-10-09T06:01:04.299Z",
       "coverage": 0.997510749038244
     }
   ]

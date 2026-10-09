@@ -30,6 +30,27 @@
     "retries": 2,
     "minimumCoverage": 0.98,
     "maxDailyMinutes": 20,
-    "maxBoards": 30
+    "maxBoards": 30,
+    "themeConcurrency": 4
+  },
+  "mainline": {
+    "maxThemes": 20,
+    "minimumMemberCoverage": 0.95,
+    "minimumFirstBoards": 3,
+    "openingWindowEnd": "10:30:00",
+    "minimumUpBreadth": 0.6,
+    "minimumBreakoutBreadth": 0.2,
+    "minimumVolumeRatio": 1.2,
+    "capacityMinCap": 10000000000,
+    "capacityMinimumRise": 0.02,
+    "capacityTopCount": 3,
+    "oldLeaderLookback": 60,
+    "oldLeaderMinimumBoards": 3,
+    "oldLeaderMinimumRise": 0.03,
+    "oldLeaderTopCount": 2,
+    "nextLeaderOpenPremium": 0.02,
+    "nextFirstBoardRetention": 0.5,
+    "nextCapacityFloor": -0.02,
+    "maxRawChecks": 180
   }
 }

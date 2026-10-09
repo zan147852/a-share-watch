@@ -1,0 +1,3569 @@
+{
+  "schema": 1,
+  "version": "v0.3-mainline",
+  "date": "2026-10-08",
+  "previousDate": "2026-09-30",
+  "status": "partial",
+  "frozenAt": "2026-10-09T05:59:27.499Z",
+  "retrospective": true,
+  "membershipDate": "2026-10-09",
+  "catalog": {
+    "source": "新浪概念分类",
+    "total": 175,
+    "valid": 174
+  },
+  "pool": {
+    "status": "failed",
+    "count": 0,
+    "error": "拒绝日期错配：请求 2026-10-08，涨停池返回 20261009"
+  },
+  "news": {
+    "status": "complete",
+    "count": 1189
+  },
+  "themes": [
+    {
+      "id": "gn_gtdc",
+      "name": "固态电池",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 23,
+      "coverage": 1,
+      "pct": 0.018046050933489287,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [
+            {
+              "id": "em-202610083889361627",
+              "title": "电池ETF永赢冲击三连涨，盘中涨超2.37%，固态电池催化密集",
+              "publishedAt": "2026-10-08T02:25:47.000Z",
+              "source": "东方财富公开快讯",
+              "url": "https://finance.eastmoney.com/a/202610083889361627.html",
+              "publicText": true,
+              "stockCodes": [],
+              "subjects": [],
+              "classification": {
+                "tier": "一般资讯",
+                "rank": 0,
+                "catalyst": false,
+                "reason": "未识别明确实施动作"
+              },
+              "matchedKeywords": [
+                "固态电池"
+              ]
+            },
+            {
+              "id": "em-202610083889340283",
+              "title": "固态电池概念持续走高 力王股份等近十股涨停",
+              "publishedAt": "2026-10-08T02:18:33.000Z",
+              "source": "东方财富公开快讯",
+              "url": "https://finance.eastmoney.com/a/202610083889340283.html",
+              "publicText": true,
+              "stockCodes": [],
+              "subjects": [],
+              "classification": {
+                "tier": "一般资讯",
+                "rank": 0,
+                "catalyst": false,
+                "reason": "未识别明确实施动作"
+              },
+              "matchedKeywords": [
+                "固态电池"
+              ]
+            },
+            {
+              "id": "em-202610083889156516",
+              "title": "固态电池概念表现活跃 传艺科技触及涨停",
+              "publishedAt": "2026-10-08T01:38:45.000Z",
+              "source": "东方财富公开快讯",
+              "url": "https://finance.eastmoney.com/a/202610083889156516.html",
+              "publicText": true,
+              "stockCodes": [],
+              "subjects": [],
+              "classification": {
+                "tier": "一般资讯",
+                "rank": 0,
+                "catalyst": false,
+                "reason": "未识别明确实施动作"
+              },
+              "matchedKeywords": [
+                "固态电池"
+              ]
+            },
+            {
+              "id": "em-202610073888901347",
+              "title": "新亚制程：未从事全固态电池材料及电解质产品的研发和生产",
+              "publishedAt": "2026-10-07T10:34:33.000Z",
+              "source": "东方财富公开快讯",
+              "url": "https://finance.eastmoney.com/a/202610073888901347.html",
+              "publicText": true,
+              "stockCodes": [],
+              "subjects": [],
+              "classification": {
+                "tier": "传闻/否认",
+                "rank": 0,
+                "catalyst": false,
+                "reason": "含传闻、否认或未落实措辞"
+              },
+              "matchedKeywords": [
+                "固态电池",
+                "全固态"
+              ]
+            }
+          ],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [
+            {
+              "code": "002733",
+              "name": "雄韬股份",
+              "close": 18.89,
+              "streak": 1,
+              "firstTime": null,
+              "breaks": null,
+              "source": "未复权日线复核"
+            }
+          ],
+          "earlyCount": 0,
+          "limitCount": 1,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.6956521739130435,
+          "breakoutBreadth": 0.17391304347826086,
+          "volumeRatio": 1.6511213138175485,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "002882",
+              "name": "金龙羽",
+              "pastBoards": 5,
+              "maxChain": 2,
+              "dates": [
+                "2026-07-29",
+                "2026-07-30",
+                "2026-08-24",
+                "2026-09-01",
+                "2026-09-15"
+              ],
+              "previousPct": 0.01917584659322724,
+              "pct": 0.07886309047237794,
+              "advanced": false,
+              "currentActive": true
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "002056",
+          "002074",
+          "002091",
+          "002244",
+          "002340",
+          "002460",
+          "002466",
+          "002608",
+          "002709",
+          "002733",
+          "002882",
+          "300073",
+          "300317",
+          "300438",
+          "300450",
+          "300473",
+          "300648",
+          "300750",
+          "600633",
+          "600733",
+          "600884",
+          "601127",
+          "601633"
+        ],
+        "firstBoards": [
+          {
+            "code": "002733",
+            "name": "雄韬股份",
+            "close": 18.89,
+            "streak": 1,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "leaders": [
+          {
+            "code": "002733",
+            "name": "雄韬股份",
+            "close": 18.89,
+            "streak": 1,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "002882",
+            "name": "金龙羽",
+            "pastBoards": 5,
+            "maxChain": 2,
+            "dates": [
+              "2026-07-29",
+              "2026-07-30",
+              "2026-08-24",
+              "2026-09-01",
+              "2026-09-15"
+            ],
+            "previousPct": 0.01917584659322724,
+            "pct": 0.07886309047237794,
+            "advanced": false,
+            "currentActive": true
+          }
+        ],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_yqgg",
+      "name": "油气改革",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 24,
+      "coverage": 0.9583333333333334,
+      "pct": 0.014780166611334937,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 0,
+          "coverage": 0.9583333333333334,
+          "missingLimits": 0,
+          "upBreadth": 0.7391304347826086,
+          "breakoutBreadth": 0,
+          "volumeRatio": 1.4199792033587169,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000059",
+          "000096",
+          "000159",
+          "000407",
+          "000554",
+          "000637",
+          "000703",
+          "000822",
+          "002210",
+          "002353",
+          "002443",
+          "002493",
+          "002629",
+          "300135",
+          "300191",
+          "600256",
+          "600339",
+          "600500",
+          "600583",
+          "600688",
+          "600822",
+          "600871",
+          "601028",
+          "601808"
+        ],
+        "firstBoards": [],
+        "leaders": [],
+        "capacity": [],
+        "oldLeaders": [],
+        "complete": {
+          "firstBoards": false,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_ndc",
+      "name": "钠电池",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 15,
+      "coverage": 1,
+      "pct": 0.01213237623872711,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 0,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.6,
+          "breakoutBreadth": 0.06666666666666667,
+          "volumeRatio": 1.4090006152634478,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "603823",
+              "name": "百合花",
+              "pastBoards": 9,
+              "maxChain": 2,
+              "dates": [
+                "2026-08-11",
+                "2026-08-17",
+                "2026-08-18",
+                "2026-09-07",
+                "2026-09-08"
+              ],
+              "previousPct": -0.006558913094401486,
+              "pct": 0.09856165998585253,
+              "advanced": false,
+              "currentActive": true
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000066",
+          "002130",
+          "002340",
+          "002455",
+          "002480",
+          "002580",
+          "300207",
+          "300428",
+          "300438",
+          "300750",
+          "300890",
+          "600216",
+          "600328",
+          "600348",
+          "603823"
+        ],
+        "firstBoards": [],
+        "leaders": [],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "603823",
+            "name": "百合花",
+            "pastBoards": 9,
+            "maxChain": 2,
+            "dates": [
+              "2026-08-11",
+              "2026-08-17",
+              "2026-08-18",
+              "2026-09-07",
+              "2026-09-08"
+            ],
+            "previousPct": -0.006558913094401486,
+            "pct": 0.09856165998585253,
+            "advanced": false,
+            "currentActive": true
+          }
+        ],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_djy",
+      "name": "电解液",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 25,
+      "coverage": 0.96,
+      "pct": 0.010675361070573708,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 0,
+          "coverage": 0.96,
+          "missingLimits": 0,
+          "upBreadth": 0.7916666666666666,
+          "breakoutBreadth": 0.041666666666666664,
+          "volumeRatio": 1.3665449508458118,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "000017",
+              "name": "深中华A",
+              "pastBoards": 8,
+              "maxChain": 7,
+              "dates": [
+                "2026-08-24",
+                "2026-08-25",
+                "2026-08-26",
+                "2026-08-27",
+                "2026-08-28"
+              ],
+              "previousPct": -0.013333333333333308,
+              "pct": 0.013513513513513375,
+              "advanced": false,
+              "currentActive": false
+            },
+            {
+              "code": "002083",
+              "name": "孚日股份",
+              "pastBoards": 3,
+              "maxChain": 2,
+              "dates": [
+                "2026-07-23",
+                "2026-07-24",
+                "2026-07-29"
+              ],
+              "previousPct": 0.037837837837837895,
+              "pct": 0.012500000000000178,
+              "advanced": true,
+              "currentActive": false
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000017",
+          "002083",
+          "002091",
+          "002326",
+          "002407",
+          "002709",
+          "002738",
+          "300037",
+          "300082",
+          "300214",
+          "300405",
+          "300721",
+          "301238",
+          "600067",
+          "600096",
+          "600348",
+          "600426",
+          "600596",
+          "600884",
+          "600955",
+          "600968",
+          "603010",
+          "603026",
+          "603067",
+          "603978"
+        ],
+        "firstBoards": [],
+        "leaders": [],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "000017",
+            "name": "深中华A",
+            "pastBoards": 8,
+            "maxChain": 7,
+            "dates": [
+              "2026-08-24",
+              "2026-08-25",
+              "2026-08-26",
+              "2026-08-27",
+              "2026-08-28"
+            ],
+            "previousPct": -0.013333333333333308,
+            "pct": 0.013513513513513375,
+            "advanced": false,
+            "currentActive": false
+          },
+          {
+            "code": "002083",
+            "name": "孚日股份",
+            "pastBoards": 3,
+            "maxChain": 2,
+            "dates": [
+              "2026-07-23",
+              "2026-07-24",
+              "2026-07-29"
+            ],
+            "previousPct": 0.037837837837837895,
+            "pct": 0.012500000000000178,
+            "advanced": true,
+            "currentActive": false
+          }
+        ],
+        "complete": {
+          "firstBoards": false,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_lk",
+      "name": "锂矿",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 39,
+      "coverage": 1,
+      "pct": 0.010492805907847442,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [
+            {
+              "id": "em-202610083889362167",
+              "title": "今日MMLC电池级碳酸锂（早盘）价格较昨日上涨1750元/吨",
+              "publishedAt": "2026-10-08T02:33:59.000Z",
+              "source": "东方财富公开快讯",
+              "url": "https://finance.eastmoney.com/a/202610083889362167.html",
+              "publicText": true,
+              "stockCodes": [
+                "159767"
+              ],
+              "subjects": [],
+              "classification": {
+                "tier": "一般资讯",
+                "rank": 0,
+                "catalyst": false,
+                "reason": "未识别明确实施动作"
+              },
+              "matchedKeywords": [
+                "碳酸锂"
+              ]
+            }
+          ],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 0,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.6410256410256411,
+          "breakoutBreadth": 0.02564102564102564,
+          "volumeRatio": 1.2367273442135722,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "002346",
+              "name": "柘中股份",
+              "pastBoards": 5,
+              "maxChain": 2,
+              "dates": [
+                "2026-07-09",
+                "2026-07-10",
+                "2026-07-31",
+                "2026-08-05",
+                "2026-09-14"
+              ],
+              "previousPct": -0.005027932960893877,
+              "pct": -0.006176305446378372,
+              "advanced": false,
+              "currentActive": false
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000155",
+          "000408",
+          "000546",
+          "000762",
+          "000792",
+          "000816",
+          "002074",
+          "002176",
+          "002192",
+          "002240",
+          "002346",
+          "002460",
+          "002466",
+          "002497",
+          "002539",
+          "002594",
+          "002738",
+          "002756",
+          "002785",
+          "002895",
+          "300014",
+          "300172",
+          "300207",
+          "300390",
+          "300409",
+          "300432",
+          "300587",
+          "300619",
+          "301092",
+          "600141",
+          "600251",
+          "600338",
+          "600367",
+          "600499",
+          "600773",
+          "601168",
+          "601899",
+          "603399",
+          "603799"
+        ],
+        "firstBoards": [],
+        "leaders": [],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "002346",
+            "name": "柘中股份",
+            "pastBoards": 5,
+            "maxChain": 2,
+            "dates": [
+              "2026-07-09",
+              "2026-07-10",
+              "2026-07-31",
+              "2026-08-05",
+              "2026-09-14"
+            ],
+            "previousPct": -0.005027932960893877,
+            "pct": -0.006176305446378372,
+            "advanced": false,
+            "currentActive": false
+          }
+        ],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_qny",
+      "name": "氢能源",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 23,
+      "coverage": 1,
+      "pct": 0.009646918878612324,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [
+            {
+              "code": "002733",
+              "name": "雄韬股份",
+              "close": 18.89,
+              "streak": 1,
+              "firstTime": null,
+              "breaks": null,
+              "source": "未复权日线复核"
+            }
+          ],
+          "earlyCount": 0,
+          "limitCount": 1,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.6086956521739131,
+          "breakoutBreadth": 0,
+          "volumeRatio": 1.2633510526947016,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "002080",
+              "name": "中材科技",
+              "pastBoards": 4,
+              "maxChain": 2,
+              "dates": [
+                "2026-07-27",
+                "2026-08-04",
+                "2026-08-05",
+                "2026-09-21"
+              ],
+              "previousPct": -0.012041598248494823,
+              "pct": -0.039519852262234534,
+              "advanced": false,
+              "currentActive": false
+            },
+            {
+              "code": "600746",
+              "name": "江苏索普",
+              "pastBoards": 3,
+              "maxChain": 2,
+              "dates": [
+                "2026-07-14",
+                "2026-07-15",
+                "2026-07-20"
+              ],
+              "previousPct": 0.01775147928994092,
+              "pct": 0.043604651162790775,
+              "advanced": false,
+              "currentActive": true
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000709",
+          "000723",
+          "000969",
+          "002080",
+          "002221",
+          "002249",
+          "002274",
+          "002639",
+          "002733",
+          "002783",
+          "300228",
+          "300409",
+          "300435",
+          "300471",
+          "300540",
+          "600273",
+          "600746",
+          "600846",
+          "600860",
+          "600969",
+          "601678",
+          "603113",
+          "603938"
+        ],
+        "firstBoards": [
+          {
+            "code": "002733",
+            "name": "雄韬股份",
+            "close": 18.89,
+            "streak": 1,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "leaders": [
+          {
+            "code": "002733",
+            "name": "雄韬股份",
+            "close": 18.89,
+            "streak": 1,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "002080",
+            "name": "中材科技",
+            "pastBoards": 4,
+            "maxChain": 2,
+            "dates": [
+              "2026-07-27",
+              "2026-08-04",
+              "2026-08-05",
+              "2026-09-21"
+            ],
+            "previousPct": -0.012041598248494823,
+            "pct": -0.039519852262234534,
+            "advanced": false,
+            "currentActive": false
+          },
+          {
+            "code": "600746",
+            "name": "江苏索普",
+            "pastBoards": 3,
+            "maxChain": 2,
+            "dates": [
+              "2026-07-14",
+              "2026-07-15",
+              "2026-07-20"
+            ],
+            "previousPct": 0.01775147928994092,
+            "pct": 0.043604651162790775,
+            "advanced": false,
+            "currentActive": true
+          }
+        ],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_yyq",
+      "name": "页岩气",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 33,
+      "coverage": 1,
+      "pct": 0.008521594539024057,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [
+            {
+              "code": "002490",
+              "name": "山东墨龙",
+              "close": 7.6,
+              "streak": 1,
+              "firstTime": null,
+              "breaks": null,
+              "source": "未复权日线复核"
+            }
+          ],
+          "earlyCount": 0,
+          "limitCount": 1,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.6363636363636364,
+          "breakoutBreadth": 0,
+          "volumeRatio": 1.4170882750086566,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "600744",
+              "name": "华银电力",
+              "pastBoards": 6,
+              "maxChain": 4,
+              "dates": [
+                "2026-07-20",
+                "2026-07-21",
+                "2026-07-22",
+                "2026-08-07",
+                "2026-09-10"
+              ],
+              "previousPct": 0.010000000000000009,
+              "pct": 0.018151815181518316,
+              "advanced": false,
+              "currentActive": false
+            },
+            {
+              "code": "000722",
+              "name": "湖南发展",
+              "pastBoards": 4,
+              "maxChain": 2,
+              "dates": [
+                "2026-07-15",
+                "2026-07-17",
+                "2026-07-20",
+                "2026-09-10"
+              ],
+              "previousPct": 0.009316770186335255,
+              "pct": 0.04230769230769238,
+              "advanced": false,
+              "currentActive": true
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000656",
+          "000722",
+          "000777",
+          "000852",
+          "000875",
+          "000883",
+          "000968",
+          "002021",
+          "002221",
+          "002278",
+          "002353",
+          "002444",
+          "002476",
+          "002490",
+          "002535",
+          "002554",
+          "300084",
+          "300157",
+          "300164",
+          "300191",
+          "300228",
+          "600106",
+          "600157",
+          "600172",
+          "600256",
+          "600378",
+          "600509",
+          "600739",
+          "600744",
+          "600987",
+          "601798",
+          "601899",
+          "603800"
+        ],
+        "firstBoards": [
+          {
+            "code": "002490",
+            "name": "山东墨龙",
+            "close": 7.6,
+            "streak": 1,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "leaders": [
+          {
+            "code": "002490",
+            "name": "山东墨龙",
+            "close": 7.6,
+            "streak": 1,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "600744",
+            "name": "华银电力",
+            "pastBoards": 6,
+            "maxChain": 4,
+            "dates": [
+              "2026-07-20",
+              "2026-07-21",
+              "2026-07-22",
+              "2026-08-07",
+              "2026-09-10"
+            ],
+            "previousPct": 0.010000000000000009,
+            "pct": 0.018151815181518316,
+            "advanced": false,
+            "currentActive": false
+          },
+          {
+            "code": "000722",
+            "name": "湖南发展",
+            "pastBoards": 4,
+            "maxChain": 2,
+            "dates": [
+              "2026-07-15",
+              "2026-07-17",
+              "2026-07-20",
+              "2026-09-10"
+            ],
+            "previousPct": 0.009316770186335255,
+            "pct": 0.04230769230769238,
+            "advanced": false,
+            "currentActive": true
+          }
+        ],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_hssl",
+      "name": "海上丝路",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 19,
+      "coverage": 0.8947368421052632,
+      "pct": 0.00851684323103294,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "unknown",
+          "summary": "首板或成分覆盖不足",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 0,
+          "coverage": 0.8947368421052632,
+          "missingLimits": 0,
+          "upBreadth": 0.8235294117647058,
+          "breakoutBreadth": 0.11764705882352941,
+          "volumeRatio": 1.384574830864363,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "unknown",
+          "summary": "历史强势候选尚未完整复核",
+          "stocks": [],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000022",
+          "000088",
+          "000415",
+          "000507",
+          "000582",
+          "000905",
+          "002040",
+          "600017",
+          "600368",
+          "600428",
+          "600436",
+          "600515",
+          "600712",
+          "600717",
+          "600798",
+          "601008",
+          "601018",
+          "601866",
+          "601880"
+        ],
+        "firstBoards": [],
+        "leaders": [],
+        "capacity": [],
+        "oldLeaders": [],
+        "complete": {
+          "firstBoards": false,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_jaz",
+      "name": "聚氨酯",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 23,
+      "coverage": 1,
+      "pct": 0.00832933653165283,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 0,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.7391304347826086,
+          "breakoutBreadth": 0,
+          "volumeRatio": 1.2646802311080199,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "000912",
+              "name": "泸天化",
+              "pastBoards": 3,
+              "maxChain": 2,
+              "dates": [
+                "2026-08-28",
+                "2026-09-08",
+                "2026-09-09"
+              ],
+              "previousPct": 0,
+              "pct": 0.023195876288659933,
+              "advanced": false,
+              "currentActive": false
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000755",
+          "000818",
+          "000912",
+          "000949",
+          "000973",
+          "002014",
+          "002061",
+          "002064",
+          "002165",
+          "002246",
+          "002254",
+          "002408",
+          "002409",
+          "300343",
+          "600096",
+          "600230",
+          "600299",
+          "600309",
+          "600339",
+          "600426",
+          "600618",
+          "600810",
+          "601678"
+        ],
+        "firstBoards": [],
+        "leaders": [],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "000912",
+            "name": "泸天化",
+            "pastBoards": 3,
+            "maxChain": 2,
+            "dates": [
+              "2026-08-28",
+              "2026-09-08",
+              "2026-09-09"
+            ],
+            "previousPct": 0,
+            "pct": 0.023195876288659933,
+            "advanced": false,
+            "currentActive": false
+          }
+        ],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_swrl",
+      "name": "生物燃料",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 8,
+      "coverage": 1,
+      "pct": 0.007453321892418069,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 0,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.75,
+          "breakoutBreadth": 0,
+          "volumeRatio": 1.065976547586183,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "600371",
+              "name": "万向德农",
+              "pastBoards": 11,
+              "maxChain": 6,
+              "dates": [
+                "2026-08-31",
+                "2026-09-01",
+                "2026-09-07",
+                "2026-09-16",
+                "2026-09-17"
+              ],
+              "previousPct": 0.052180685358255374,
+              "pct": 0.007401924500370027,
+              "advanced": true,
+              "currentActive": false
+            },
+            {
+              "code": "000859",
+              "name": "国风新材",
+              "pastBoards": 3,
+              "maxChain": 2,
+              "dates": [
+                "2026-07-28",
+                "2026-08-10",
+                "2026-08-11"
+              ],
+              "previousPct": -0.01044083526682138,
+              "pct": 0.011723329425556983,
+              "advanced": false,
+              "currentActive": false
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000859",
+          "000930",
+          "002124",
+          "300335",
+          "600371",
+          "600475",
+          "600598",
+          "600803"
+        ],
+        "firstBoards": [],
+        "leaders": [],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "600371",
+            "name": "万向德农",
+            "pastBoards": 11,
+            "maxChain": 6,
+            "dates": [
+              "2026-08-31",
+              "2026-09-01",
+              "2026-09-07",
+              "2026-09-16",
+              "2026-09-17"
+            ],
+            "previousPct": 0.052180685358255374,
+            "pct": 0.007401924500370027,
+            "advanced": true,
+            "currentActive": false
+          },
+          {
+            "code": "000859",
+            "name": "国风新材",
+            "pastBoards": 3,
+            "maxChain": 2,
+            "dates": [
+              "2026-07-28",
+              "2026-08-10",
+              "2026-08-11"
+            ],
+            "previousPct": -0.01044083526682138,
+            "pct": 0.011723329425556983,
+            "advanced": false,
+            "currentActive": false
+          }
+        ],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_fn",
+      "name": "风能",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 59,
+      "coverage": 1,
+      "pct": 0.007349134932659062,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 0,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.6101694915254238,
+          "breakoutBreadth": 0.06779661016949153,
+          "volumeRatio": 1.2328398948527555,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "000993",
+              "name": "闽东电力",
+              "pastBoards": 6,
+              "maxChain": 6,
+              "dates": [
+                "2026-09-10",
+                "2026-09-11",
+                "2026-09-14",
+                "2026-09-15",
+                "2026-09-16"
+              ],
+              "previousPct": 0.04975429975429968,
+              "pct": 0.038033937975424204,
+              "advanced": true,
+              "currentActive": false
+            },
+            {
+              "code": "600540",
+              "name": "新赛股份",
+              "pastBoards": 8,
+              "maxChain": 5,
+              "dates": [
+                "2026-08-31",
+                "2026-09-01",
+                "2026-09-02",
+                "2026-09-07",
+                "2026-09-09"
+              ],
+              "previousPct": -0.02645502645502651,
+              "pct": -0.014492753623188248,
+              "advanced": false,
+              "currentActive": false
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000027",
+          "000507",
+          "000539",
+          "000656",
+          "000720",
+          "000767",
+          "000862",
+          "000875",
+          "000883",
+          "000958",
+          "000966",
+          "000970",
+          "000993",
+          "002009",
+          "002060",
+          "002080",
+          "002130",
+          "002164",
+          "002201",
+          "002202",
+          "002451",
+          "002487",
+          "002531",
+          "002576",
+          "002669",
+          "300004",
+          "300095",
+          "300129",
+          "300187",
+          "300274",
+          "300304",
+          "300443",
+          "300569",
+          "600089",
+          "600163",
+          "600192",
+          "600236",
+          "600366",
+          "600396",
+          "600416",
+          "600425",
+          "600483",
+          "600505",
+          "600540",
+          "600550",
+          "600578",
+          "600583",
+          "600605",
+          "600642",
+          "600653",
+          "600744",
+          "600765",
+          "600795",
+          "600863",
+          "600864",
+          "600875",
+          "601016",
+          "601218",
+          "601727"
+        ],
+        "firstBoards": [],
+        "leaders": [],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "000993",
+            "name": "闽东电力",
+            "pastBoards": 6,
+            "maxChain": 6,
+            "dates": [
+              "2026-09-10",
+              "2026-09-11",
+              "2026-09-14",
+              "2026-09-15",
+              "2026-09-16"
+            ],
+            "previousPct": 0.04975429975429968,
+            "pct": 0.038033937975424204,
+            "advanced": true,
+            "currentActive": false
+          },
+          {
+            "code": "600540",
+            "name": "新赛股份",
+            "pastBoards": 8,
+            "maxChain": 5,
+            "dates": [
+              "2026-08-31",
+              "2026-09-01",
+              "2026-09-02",
+              "2026-09-07",
+              "2026-09-09"
+            ],
+            "previousPct": -0.02645502645502651,
+            "pct": -0.014492753623188248,
+            "advanced": false,
+            "currentActive": false
+          }
+        ],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_zndw",
+      "name": "智能电网",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 34,
+      "coverage": 1,
+      "pct": 0.006656647177246537,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [
+            {
+              "id": "em-202610083889536648",
+              "title": "数据中心电力缺口凸显，科技巨头大手笔锁定核电，电力ETF博时(561700)跟踪指数涨超1%",
+              "publishedAt": "2026-10-08T06:16:50.000Z",
+              "source": "东方财富公开快讯",
+              "url": "https://finance.eastmoney.com/a/202610083889536648.html",
+              "publicText": true,
+              "stockCodes": [],
+              "subjects": [],
+              "classification": {
+                "tier": "一般资讯",
+                "rank": 0,
+                "catalyst": false,
+                "reason": "未识别明确实施动作"
+              },
+              "matchedKeywords": [
+                "电力"
+              ]
+            },
+            {
+              "id": "em-202610083889343534",
+              "title": "电力板块震荡上扬 广西能源涨停",
+              "publishedAt": "2026-10-08T02:20:34.000Z",
+              "source": "东方财富公开快讯",
+              "url": "https://finance.eastmoney.com/a/202610083889343534.html",
+              "publicText": true,
+              "stockCodes": [],
+              "subjects": [],
+              "classification": {
+                "tier": "一般资讯",
+                "rank": 0,
+                "catalyst": false,
+                "reason": "未识别明确实施动作"
+              },
+              "matchedKeywords": [
+                "电力"
+              ]
+            },
+            {
+              "id": "em-202610083889065932",
+              "title": "国盛证券：AI算力催生电力缺口 燃机景气周期下国内产业链迎发展良机",
+              "publishedAt": "2026-10-08T00:10:00.000Z",
+              "source": "东方财富公开快讯",
+              "url": "https://finance.eastmoney.com/a/202610083889065932.html",
+              "publicText": true,
+              "stockCodes": [],
+              "subjects": [],
+              "classification": {
+                "tier": "一般资讯",
+                "rank": 0,
+                "catalyst": false,
+                "reason": "未识别明确实施动作"
+              },
+              "matchedKeywords": [
+                "电力"
+              ]
+            },
+            {
+              "id": "em-202610063888752887",
+              "title": "韩国政府已向美方汇出24亿美元用于得克萨斯州的电力项目",
+              "publishedAt": "2026-10-06T06:52:37.000Z",
+              "source": "东方财富公开快讯",
+              "url": "https://finance.eastmoney.com/a/202610063888752887.html",
+              "publicText": true,
+              "stockCodes": [],
+              "subjects": [],
+              "classification": {
+                "tier": "一般资讯",
+                "rank": 0,
+                "catalyst": false,
+                "reason": "未识别明确实施动作"
+              },
+              "matchedKeywords": [
+                "电力"
+              ]
+            }
+          ],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 1,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.5588235294117647,
+          "breakoutBreadth": 0.08823529411764706,
+          "volumeRatio": 1.1979397038484192,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "600192",
+              "name": "长城电工",
+              "pastBoards": 5,
+              "maxChain": 2,
+              "dates": [
+                "2026-07-10",
+                "2026-08-03",
+                "2026-08-10",
+                "2026-09-09",
+                "2026-09-10"
+              ],
+              "previousPct": -0.008275862068965467,
+              "pct": 0.0027816411682892728,
+              "advanced": false,
+              "currentActive": false
+            },
+            {
+              "code": "603556",
+              "name": "海兴电力",
+              "pastBoards": 3,
+              "maxChain": 2,
+              "dates": [
+                "2026-07-10",
+                "2026-07-29",
+                "2026-07-30"
+              ],
+              "previousPct": 0.0076301615798921585,
+              "pct": -0.006681514476614692,
+              "advanced": false,
+              "currentActive": false
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000021",
+          "000400",
+          "000507",
+          "000551",
+          "000682",
+          "002028",
+          "002058",
+          "002074",
+          "002090",
+          "002112",
+          "002121",
+          "002123",
+          "002169",
+          "002180",
+          "002184",
+          "002322",
+          "002339",
+          "002356",
+          "300001",
+          "300014",
+          "300018",
+          "300062",
+          "300365",
+          "300513",
+          "600192",
+          "600268",
+          "600312",
+          "600406",
+          "600525",
+          "600560",
+          "600590",
+          "600885",
+          "600973",
+          "603556"
+        ],
+        "firstBoards": [],
+        "leaders": [
+          {
+            "code": "002058",
+            "name": "紫竹高科",
+            "close": 22.22,
+            "streak": 3,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "600192",
+            "name": "长城电工",
+            "pastBoards": 5,
+            "maxChain": 2,
+            "dates": [
+              "2026-07-10",
+              "2026-08-03",
+              "2026-08-10",
+              "2026-09-09",
+              "2026-09-10"
+            ],
+            "previousPct": -0.008275862068965467,
+            "pct": 0.0027816411682892728,
+            "advanced": false,
+            "currentActive": false
+          },
+          {
+            "code": "603556",
+            "name": "海兴电力",
+            "pastBoards": 3,
+            "maxChain": 2,
+            "dates": [
+              "2026-07-10",
+              "2026-07-29",
+              "2026-07-30"
+            ],
+            "previousPct": 0.0076301615798921585,
+            "pct": -0.006681514476614692,
+            "advanced": false,
+            "currentActive": false
+          }
+        ],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_wss",
+      "name": "维生素",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 13,
+      "coverage": 1,
+      "pct": 0.006484194508922006,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [
+            {
+              "code": "600812",
+              "name": "华北制药",
+              "close": 5.48,
+              "streak": 1,
+              "firstTime": null,
+              "breaks": null,
+              "source": "未复权日线复核"
+            }
+          ],
+          "earlyCount": 0,
+          "limitCount": 1,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.5384615384615384,
+          "breakoutBreadth": 0.07692307692307693,
+          "volumeRatio": 1.5266057847125707,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000597",
+          "000788",
+          "000952",
+          "002001",
+          "002019",
+          "002332",
+          "002562",
+          "002626",
+          "300267",
+          "300401",
+          "600216",
+          "600299",
+          "600812"
+        ],
+        "firstBoards": [
+          {
+            "code": "600812",
+            "name": "华北制药",
+            "close": 5.48,
+            "streak": 1,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "leaders": [
+          {
+            "code": "600812",
+            "name": "华北制药",
+            "close": 5.48,
+            "streak": 1,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "capacity": [],
+        "oldLeaders": [],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_hgzb",
+      "name": "海工装备",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 32,
+      "coverage": 0.96875,
+      "pct": 0.006333067325258265,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [
+            {
+              "code": "002490",
+              "name": "山东墨龙",
+              "close": 7.6,
+              "streak": 1,
+              "firstTime": null,
+              "breaks": null,
+              "source": "未复权日线复核"
+            }
+          ],
+          "earlyCount": 0,
+          "limitCount": 1,
+          "coverage": 0.96875,
+          "missingLimits": 0,
+          "upBreadth": 0.5806451612903226,
+          "breakoutBreadth": 0.03225806451612903,
+          "volumeRatio": 1.3926541845252234,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "002490",
+              "name": "山东墨龙",
+              "pastBoards": 3,
+              "maxChain": 2,
+              "dates": [
+                "2026-07-08",
+                "2026-07-09",
+                "2026-07-20"
+              ],
+              "previousPct": -0.004322766570605263,
+              "pct": 0.09985528219971052,
+              "advanced": false,
+              "currentActive": true
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000039",
+          "000099",
+          "000852",
+          "000898",
+          "002151",
+          "002278",
+          "002314",
+          "002318",
+          "002342",
+          "002353",
+          "002423",
+          "002445",
+          "002483",
+          "002490",
+          "002608",
+          "300008",
+          "300065",
+          "300084",
+          "300177",
+          "300217",
+          "300337",
+          "600019",
+          "600072",
+          "600150",
+          "600320",
+          "600428",
+          "600522",
+          "600583",
+          "600685",
+          "601808",
+          "601890",
+          "601989"
+        ],
+        "firstBoards": [
+          {
+            "code": "002490",
+            "name": "山东墨龙",
+            "close": 7.6,
+            "streak": 1,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "leaders": [
+          {
+            "code": "002490",
+            "name": "山东墨龙",
+            "close": 7.6,
+            "streak": 1,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "002490",
+            "name": "山东墨龙",
+            "pastBoards": 3,
+            "maxChain": 2,
+            "dates": [
+              "2026-07-08",
+              "2026-07-09",
+              "2026-07-20"
+            ],
+            "previousPct": -0.004322766570605263,
+            "pct": 0.09985528219971052,
+            "advanced": false,
+            "currentActive": true
+          }
+        ],
+        "complete": {
+          "firstBoards": false,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_cgl",
+      "name": "草甘膦",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 10,
+      "coverage": 1,
+      "pct": 0.0061212086318979345,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 0,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.6,
+          "breakoutBreadth": 0,
+          "volumeRatio": 1.1503588147283854,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000407",
+          "000525",
+          "000553",
+          "002391",
+          "600141",
+          "600226",
+          "600389",
+          "600486",
+          "600596",
+          "603077"
+        ],
+        "firstBoards": [],
+        "leaders": [],
+        "capacity": [],
+        "oldLeaders": [],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_ljfl",
+      "name": "垃圾分类",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 36,
+      "coverage": 1,
+      "pct": 0.005712787671064318,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 0,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.5833333333333334,
+          "breakoutBreadth": 0,
+          "volumeRatio": 1.1716089893700254,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000035",
+          "000680",
+          "000900",
+          "000967",
+          "002009",
+          "002090",
+          "002116",
+          "002340",
+          "002375",
+          "002483",
+          "002591",
+          "002596",
+          "002645",
+          "002672",
+          "300176",
+          "300190",
+          "300210",
+          "300249",
+          "300261",
+          "300376",
+          "300384",
+          "300403",
+          "300407",
+          "600008",
+          "600217",
+          "600323",
+          "600475",
+          "600501",
+          "600805",
+          "600983",
+          "601200",
+          "601330",
+          "603015",
+          "603568",
+          "603615",
+          "603686"
+        ],
+        "firstBoards": [],
+        "leaders": [],
+        "capacity": [],
+        "oldLeaders": [],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_hdhn",
+      "name": "核电核能",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 63,
+      "coverage": 1,
+      "pct": 0.00552425555926948,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 1,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.5714285714285714,
+          "breakoutBreadth": 0.047619047619047616,
+          "volumeRatio": 1.301610384499398,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "000993",
+              "name": "闽东电力",
+              "pastBoards": 6,
+              "maxChain": 6,
+              "dates": [
+                "2026-09-10",
+                "2026-09-11",
+                "2026-09-14",
+                "2026-09-15",
+                "2026-09-16"
+              ],
+              "previousPct": 0.04975429975429968,
+              "pct": 0.038033937975424204,
+              "advanced": true,
+              "currentActive": false
+            },
+            {
+              "code": "002248",
+              "name": "华东数控",
+              "pastBoards": 3,
+              "maxChain": 3,
+              "dates": [
+                "2026-08-10",
+                "2026-08-11",
+                "2026-08-12"
+              ],
+              "previousPct": -0.01927194860813697,
+              "pct": -0.007641921397379958,
+              "advanced": false,
+              "currentActive": false
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000777",
+          "000825",
+          "000881",
+          "000883",
+          "000899",
+          "000922",
+          "000967",
+          "000969",
+          "000993",
+          "002011",
+          "002058",
+          "002130",
+          "002149",
+          "002167",
+          "002212",
+          "002248",
+          "002255",
+          "002266",
+          "002276",
+          "002318",
+          "002364",
+          "002366",
+          "002438",
+          "002478",
+          "002534",
+          "002564",
+          "300004",
+          "300084",
+          "300092",
+          "300153",
+          "300185",
+          "300411",
+          "300489",
+          "600023",
+          "600089",
+          "600202",
+          "600226",
+          "600269",
+          "600292",
+          "600307",
+          "600328",
+          "600416",
+          "600483",
+          "600516",
+          "600550",
+          "600558",
+          "600622",
+          "600642",
+          "600848",
+          "600875",
+          "600973",
+          "601106",
+          "601179",
+          "601369",
+          "601611",
+          "601727",
+          "601877",
+          "601985",
+          "601991",
+          "603100",
+          "603169",
+          "603308",
+          "603699"
+        ],
+        "firstBoards": [],
+        "leaders": [
+          {
+            "code": "002058",
+            "name": "紫竹高科",
+            "close": 22.22,
+            "streak": 3,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "000993",
+            "name": "闽东电力",
+            "pastBoards": 6,
+            "maxChain": 6,
+            "dates": [
+              "2026-09-10",
+              "2026-09-11",
+              "2026-09-14",
+              "2026-09-15",
+              "2026-09-16"
+            ],
+            "previousPct": 0.04975429975429968,
+            "pct": 0.038033937975424204,
+            "advanced": true,
+            "currentActive": false
+          },
+          {
+            "code": "002248",
+            "name": "华东数控",
+            "pastBoards": 3,
+            "maxChain": 3,
+            "dates": [
+              "2026-08-10",
+              "2026-08-11",
+              "2026-08-12"
+            ],
+            "previousPct": -0.01927194860813697,
+            "pct": -0.007641921397379958,
+            "advanced": false,
+            "currentActive": false
+          }
+        ],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_tjy",
+      "name": "碳交易",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 27,
+      "coverage": 1,
+      "pct": 0.004797151371948447,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 0,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.5185185185185185,
+          "breakoutBreadth": 0,
+          "volumeRatio": 1.0738295555710207,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "000993",
+              "name": "闽东电力",
+              "pastBoards": 6,
+              "maxChain": 6,
+              "dates": [
+                "2026-09-10",
+                "2026-09-11",
+                "2026-09-14",
+                "2026-09-15",
+                "2026-09-16"
+              ],
+              "previousPct": 0.04975429975429968,
+              "pct": 0.038033937975424204,
+              "advanced": true,
+              "currentActive": false
+            },
+            {
+              "code": "600744",
+              "name": "华银电力",
+              "pastBoards": 6,
+              "maxChain": 4,
+              "dates": [
+                "2026-07-20",
+                "2026-07-21",
+                "2026-07-22",
+                "2026-08-07",
+                "2026-09-10"
+              ],
+              "previousPct": 0.010000000000000009,
+              "pct": 0.018151815181518316,
+              "advanced": false,
+              "currentActive": false
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000027",
+          "000402",
+          "000767",
+          "000928",
+          "000966",
+          "000987",
+          "000993",
+          "002015",
+          "002092",
+          "002549",
+          "002658",
+          "002679",
+          "300012",
+          "300234",
+          "300887",
+          "600021",
+          "600160",
+          "600292",
+          "600378",
+          "600388",
+          "600475",
+          "600517",
+          "600744",
+          "600968",
+          "601991",
+          "603060",
+          "603126"
+        ],
+        "firstBoards": [],
+        "leaders": [],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "000993",
+            "name": "闽东电力",
+            "pastBoards": 6,
+            "maxChain": 6,
+            "dates": [
+              "2026-09-10",
+              "2026-09-11",
+              "2026-09-14",
+              "2026-09-15",
+              "2026-09-16"
+            ],
+            "previousPct": 0.04975429975429968,
+            "pct": 0.038033937975424204,
+            "advanced": true,
+            "currentActive": false
+          },
+          {
+            "code": "600744",
+            "name": "华银电力",
+            "pastBoards": 6,
+            "maxChain": 4,
+            "dates": [
+              "2026-07-20",
+              "2026-07-21",
+              "2026-07-22",
+              "2026-08-07",
+              "2026-09-10"
+            ],
+            "previousPct": 0.010000000000000009,
+            "pct": 0.018151815181518316,
+            "advanced": false,
+            "currentActive": false
+          }
+        ],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_ldc",
+      "name": "锂电池",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 101,
+      "coverage": 0.9900990099009901,
+      "pct": 0.004685893848946164,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [
+            {
+              "id": "em-202610083889068469",
+              "title": "我团队提出锂电正极材料设计新策略",
+              "publishedAt": "2026-10-08T00:42:43.000Z",
+              "source": "东方财富公开快讯",
+              "url": "https://finance.eastmoney.com/a/202610083889068469.html",
+              "publicText": true,
+              "stockCodes": [],
+              "subjects": [],
+              "classification": {
+                "tier": "一般资讯",
+                "rank": 0,
+                "catalyst": false,
+                "reason": "未识别明确实施动作"
+              },
+              "matchedKeywords": [
+                "锂电"
+              ]
+            }
+          ],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [
+            {
+              "code": "002733",
+              "name": "雄韬股份",
+              "close": 18.89,
+              "streak": 1,
+              "firstTime": null,
+              "breaks": null,
+              "source": "未复权日线复核"
+            }
+          ],
+          "earlyCount": 0,
+          "limitCount": 2,
+          "coverage": 0.9900990099009901,
+          "missingLimits": 0,
+          "upBreadth": 0.59,
+          "breakoutBreadth": 0.05,
+          "volumeRatio": 1.280897049006097,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "002631",
+              "name": "德尔未来",
+              "pastBoards": 7,
+              "maxChain": 2,
+              "dates": [
+                "2026-08-28",
+                "2026-09-03",
+                "2026-09-15",
+                "2026-09-16",
+                "2026-09-18"
+              ],
+              "previousPct": 0.0029761904761904656,
+              "pct": -0.07047477744807129,
+              "advanced": false,
+              "currentActive": false
+            },
+            {
+              "code": "002491",
+              "name": "通鼎互联",
+              "pastBoards": 6,
+              "maxChain": 2,
+              "dates": [
+                "2026-08-12",
+                "2026-08-20",
+                "2026-08-21",
+                "2026-09-15",
+                "2026-09-16"
+              ],
+              "previousPct": -0.02812803103782746,
+              "pct": -0.012974051896207484,
+              "advanced": false,
+              "currentActive": false
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000009",
+          "000049",
+          "000559",
+          "000571",
+          "000636",
+          "000733",
+          "000762",
+          "000839",
+          "000913",
+          "000962",
+          "000969",
+          "000973",
+          "002012",
+          "002045",
+          "002056",
+          "002057",
+          "002074",
+          "002077",
+          "002080",
+          "002085",
+          "002091",
+          "002108",
+          "002121",
+          "002139",
+          "002165",
+          "002171",
+          "002176",
+          "002190",
+          "002192",
+          "002206",
+          "002240",
+          "002263",
+          "002340",
+          "002389",
+          "002407",
+          "002426",
+          "002427",
+          "002455",
+          "002460",
+          "002466",
+          "002491",
+          "002497",
+          "002580",
+          "002594",
+          "002617",
+          "002631",
+          "002632",
+          "002709",
+          "002723",
+          "002733",
+          "300014",
+          "300035",
+          "300037",
+          "300073",
+          "300080",
+          "300082",
+          "300153",
+          "300207",
+          "300317",
+          "300340",
+          "300432",
+          "300438",
+          "300444",
+          "300450",
+          "300457",
+          "300568",
+          "600067",
+          "600071",
+          "600076",
+          "600096",
+          "600110",
+          "600111",
+          "600135",
+          "600192",
+          "600210",
+          "600212",
+          "600232",
+          "600241",
+          "600255",
+          "600273",
+          "600336",
+          "600367",
+          "600390",
+          "600405",
+          "600470",
+          "600478",
+          "600482",
+          "600499",
+          "600522",
+          "600549",
+          "600580",
+          "600773",
+          "600854",
+          "600869",
+          "600872",
+          "600884",
+          "601012",
+          "601168",
+          "601311",
+          "603026",
+          "603077"
+        ],
+        "firstBoards": [
+          {
+            "code": "002733",
+            "name": "雄韬股份",
+            "close": 18.89,
+            "streak": 1,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "leaders": [
+          {
+            "code": "600241",
+            "name": "时代万恒",
+            "close": 10.69,
+            "streak": 4,
+            "firstTime": null,
+            "breaks": null,
+            "source": "未复权日线复核"
+          }
+        ],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "002631",
+            "name": "德尔未来",
+            "pastBoards": 7,
+            "maxChain": 2,
+            "dates": [
+              "2026-08-28",
+              "2026-09-03",
+              "2026-09-15",
+              "2026-09-16",
+              "2026-09-18"
+            ],
+            "previousPct": 0.0029761904761904656,
+            "pct": -0.07047477744807129,
+            "advanced": false,
+            "currentActive": false
+          },
+          {
+            "code": "002491",
+            "name": "通鼎互联",
+            "pastBoards": 6,
+            "maxChain": 2,
+            "dates": [
+              "2026-08-12",
+              "2026-08-20",
+              "2026-08-21",
+              "2026-09-15",
+              "2026-09-16"
+            ],
+            "previousPct": -0.02812803103782746,
+            "pct": -0.012974051896207484,
+            "advanced": false,
+            "currentActive": false
+          }
+        ],
+        "complete": {
+          "firstBoards": false,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    },
+    {
+      "id": "gn_dtjj",
+      "name": "低碳经济",
+      "date": "2026-10-08",
+      "membershipDate": "2026-10-09",
+      "retrospective": true,
+      "memberCount": 79,
+      "coverage": 1,
+      "pct": 0.004251988177413096,
+      "state": "条件不符",
+      "steps": [
+        {
+          "key": "news",
+          "name": "消息级别",
+          "status": "fail",
+          "summary": "采集范围内未识别题材催化",
+          "items": [],
+          "coverage": "complete",
+          "definition": "机器按媒体标题/原文关键词分级；不把媒体A/B/C等级当政策级别，不推断消息首次公开或公司实际受益。"
+        },
+        {
+          "key": "tide",
+          "name": "首板潮",
+          "status": "fail",
+          "summary": "收盘首板不足 3 家",
+          "firstBoards": [],
+          "earlyCount": 0,
+          "limitCount": 0,
+          "coverage": 1,
+          "missingLimits": 0,
+          "upBreadth": 0.569620253164557,
+          "breakoutBreadth": 0.02531645569620253,
+          "volumeRatio": 1.2170583072840098,
+          "volumeCoverage": 1,
+          "index": null,
+          "proxyPassed": false,
+          "definition": "早盘窗口含集合竞价首次封板09:25至10:30；只统计收盘仍涨停且非连续涨停的首板。广度/量比是成分代理，不能替代官方板块指数创新高；不包含盘中炸板后未回封股票。"
+        },
+        {
+          "key": "capacity",
+          "name": "容量中军",
+          "status": "unknown",
+          "summary": "缺目标日市值或成分覆盖，不能确认中军",
+          "stocks": [],
+          "coverage": 0,
+          "definition": "总市值≥100亿元，按目标日成交额挑前3只；至少1只涨幅≥2%且成交量/此前5日均量≥1.2。大市值只提供容量候选身份。"
+        },
+        {
+          "key": "oldLeader",
+          "name": "老龙异动",
+          "status": "fail",
+          "summary": "历史强势候选未出现规则要求的提前异动",
+          "stocks": [
+            {
+              "code": "600792",
+              "name": "云煤能源",
+              "pastBoards": 5,
+              "maxChain": 3,
+              "dates": [
+                "2026-09-01",
+                "2026-09-08",
+                "2026-09-09",
+                "2026-09-10",
+                "2026-09-17"
+              ],
+              "previousPct": -0.047258979206049156,
+              "pct": 0.03571428571428559,
+              "advanced": false,
+              "currentActive": false
+            },
+            {
+              "code": "600644",
+              "name": "乐山电力",
+              "pastBoards": 6,
+              "maxChain": 2,
+              "dates": [
+                "2026-07-20",
+                "2026-07-22",
+                "2026-08-03",
+                "2026-09-10",
+                "2026-09-16"
+              ],
+              "previousPct": 0.0022573363431153126,
+              "pct": 0.022522522522522515,
+              "advanced": false,
+              "currentActive": false
+            }
+          ],
+          "unchecked": 0,
+          "definition": "在目标日之前60个交易日，排除最近5个交易日，至少3次涨停且曾2连板；前一交易日涨≥3%，今日涨≥3%且量比≥1.2。属于历史强势代理，题材归属和老龙身份仍需复核。"
+        },
+        {
+          "key": "nextDay",
+          "name": "次日验证",
+          "status": "pending",
+          "summary": "缺少前一交易日事前冻结名单，不能事后补选赢家"
+        }
+      ],
+      "snapshot": {
+        "memberCodes": [
+          "000009",
+          "000012",
+          "000155",
+          "000541",
+          "000601",
+          "000619",
+          "000652",
+          "000697",
+          "000755",
+          "000786",
+          "000833",
+          "000839",
+          "000862",
+          "000932",
+          "000969",
+          "000970",
+          "000973",
+          "002009",
+          "002011",
+          "002028",
+          "002056",
+          "002076",
+          "002083",
+          "002088",
+          "002091",
+          "002123",
+          "002145",
+          "002169",
+          "002202",
+          "002255",
+          "600010",
+          "600011",
+          "600022",
+          "600089",
+          "600123",
+          "600131",
+          "600151",
+          "600160",
+          "600188",
+          "600202",
+          "600261",
+          "600282",
+          "600292",
+          "600309",
+          "600348",
+          "600360",
+          "600366",
+          "600388",
+          "600392",
+          "600396",
+          "600416",
+          "600419",
+          "600426",
+          "600475",
+          "600499",
+          "600509",
+          "600550",
+          "600569",
+          "600578",
+          "600585",
+          "600586",
+          "600590",
+          "600644",
+          "600649",
+          "600720",
+          "600725",
+          "600740",
+          "600792",
+          "600848",
+          "600863",
+          "600875",
+          "600884",
+          "600970",
+          "601005",
+          "601666",
+          "601727",
+          "601898",
+          "601958",
+          "601991"
+        ],
+        "firstBoards": [],
+        "leaders": [],
+        "capacity": [],
+        "oldLeaders": [
+          {
+            "code": "600792",
+            "name": "云煤能源",
+            "pastBoards": 5,
+            "maxChain": 3,
+            "dates": [
+              "2026-09-01",
+              "2026-09-08",
+              "2026-09-09",
+              "2026-09-10",
+              "2026-09-17"
+            ],
+            "previousPct": -0.047258979206049156,
+            "pct": 0.03571428571428559,
+            "advanced": false,
+            "currentActive": false
+          },
+          {
+            "code": "600644",
+            "name": "乐山电力",
+            "pastBoards": 6,
+            "maxChain": 2,
+            "dates": [
+              "2026-07-20",
+              "2026-07-22",
+              "2026-08-03",
+              "2026-09-10",
+              "2026-09-16"
+            ],
+            "previousPct": 0.0022573363431153126,
+            "pct": 0.022522522522522515,
+            "advanced": false,
+            "currentActive": false
+          }
+        ],
+        "complete": {
+          "firstBoards": true,
+          "capacity": false
+        }
+      },
+      "passedCount": 0,
+      "reviewCount": 0,
+      "definition": "各阈值为v0.3初版研究规则，未证明预测收益；五步规则共振仍不等于买入许可。"
+    }
+  ],
+  "validations": [],
+  "settings": {
+    "maxThemes": 20,
+    "minimumMemberCoverage": 0.95,
+    "minimumFirstBoards": 3,
+    "openingWindowEnd": "10:30:00",
+    "minimumUpBreadth": 0.6,
+    "minimumBreakoutBreadth": 0.2,
+    "minimumVolumeRatio": 1.2,
+    "capacityMinCap": 10000000000,
+    "capacityMinimumRise": 0.02,
+    "capacityTopCount": 3,
+    "oldLeaderLookback": 60,
+    "oldLeaderMinimumBoards": 3,
+    "oldLeaderMinimumRise": 0.03,
+    "oldLeaderTopCount": 2,
+    "nextLeaderOpenPremium": 0.02,
+    "nextFirstBoardRetention": 0.5,
+    "nextCapacityFloor": -0.02,
+    "maxRawChecks": 180
+  },
+  "errors": [
+    {
+      "name": "上海本地",
+      "error": "概念成分覆盖不完整：123/118"
+    },
+    {
+      "name": "涨停池",
+      "error": "拒绝日期错配：请求 2026-10-08，涨停池返回 20261009"
+    }
+  ],
+  "note": "收盘生成五步证据；盘中密集爆发只使用首次封板记录，无法还原全部炸板。榜单最多取目标日成分均涨幅前20个概念并保留昨日题材；当前成分与关键词关联不证明公司受益。"
+}
