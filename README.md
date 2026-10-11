@@ -78,6 +78,10 @@ GitHub 定时任务可能延迟，默认分支必须存在；长期不活跃仓�
 
 本地调试命令：`node douyin-monitor/cli.js run`；仅根据已保存数据生成报告：`node douyin-monitor/cli.js report --skip-collect`；分享链接信息可按 `douyin-monitor/README.md` 的 JSON 格式导入。抖音接口权限、平台返回字段和 GitHub 定时任务都可能变化，日报需要人工核验。
 
+## 版本管理与发布
+
+项目版本写在 `package.json`，发布记录写在 `CHANGELOG.md`。本地完成改动后可运行 `powershell -ExecutionPolicy Bypass -File scripts/release.ps1 -Bump patch -Message "说明本次改动"`，脚本会先重新生成项目包、运行全部测试、检查差异，再提交、创建 Git tag 并推送到 GitHub。推送 tag 后，GitHub Actions 会自动创建对应 Release；每次 push 和 Pull Request 也会自动运行测试。后续修改由 Codex 按这套流程提交和上传。
+
 ## 数据口径与边界
 
 - 腾讯、新浪、东方财富公开接口都可能访问失败或改变字段。日线结构采用腾讯前复权数据，备用采用新浪原始日线除以逐日复权因子；实际价格与未复权分钟记录也可来自新浪。不同来源的复权算法可能产生小幅差异。

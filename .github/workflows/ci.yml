@@ -1,0 +1,25 @@
+name: 测试
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: 运行测试
+        run: node --test test/*.test.js
+      - name: 校验项目打包文件
+        run: |
+          node build-bundle.js
+          git diff --exit-code -- project-bundle.json
