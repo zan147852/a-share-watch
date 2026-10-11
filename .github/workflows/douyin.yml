@@ -1,0 +1,57 @@
+name: 抖音观点日报与微信推送
+
+on:
+  schedule:
+    # 约北京时间 22:00；GitHub Actions 可能延迟，不作为交易时钟
+    - cron: '0 14 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: douyin-daily
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: 展开项目文件
+        run: |
+          if [ -f project-bundle.json ]; then
+            node -e 'const fs=require("fs"),path=require("path"),zlib=require("zlib");const bundle=JSON.parse(fs.readFileSync("project-bundle.json"));const files=bundle.files||JSON.parse(zlib.gunzipSync(Buffer.from(bundle.archive,"base64")));for(const [name,data] of Object.entries(files)){if(name.startsWith(".github/")||name.startsWith("public/data/")||name.startsWith("douyin-monitor/data/")||name.startsWith("douyin-monitor/reports/"))continue;const target=path.resolve(name);if(!target.startsWith(process.cwd()+path.sep))throw Error("invalid path");fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,Buffer.from(data,"base64"));}'
+          fi
+      - name: 运行抖音观点整理
+        continue-on-error: true
+        env:
+          DOUYIN_ACCESS_TOKEN: ${{ secrets.DOUYIN_ACCESS_TOKEN }}
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          PUSHPLUS_TOPIC: ${{ secrets.PUSHPLUS_TOPIC }}
+          WECHAT_ROBOT_WEBHOOK: ${{ secrets.WECHAT_ROBOT_WEBHOOK }}
+        run: node douyin-monitor/cli.js run
+      - name: 保存日报
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/douyin-* douyin-monitor/data/douyin-records.json douyin-monitor/reports
+          if ! git diff --cached --quiet; then
+            git commit -m "Update Douyin stock opinion report"
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - name: 发布日报网页
+        id: deployment
+        uses: actions/deploy-pages@v4

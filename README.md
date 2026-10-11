@@ -70,6 +70,14 @@ GitHub 定时任务可能延迟，默认分支必须存在；长期不活跃仓�
 
 当前手机查看为网页，锁屏消息推送未配置。选定通知服务后接入并测试到达；不以普通推送替代止损或秒级打板执行。
 
+## 抖音股票观点日报
+
+`douyin-monitor/` 是独立的抖音观点模块，与收盘筛选共用 GitHub Actions 和 GitHub Pages。它按工作日北京时间约22:00运行，使用抖音官方视频搜索接口获取配置中的作者和关键词，去重后生成 `public/data/douyin-report-YYYY-MM-DD.json` 与 Markdown 日报。观点只进入观察候选，不会下单或改变原有策略。
+
+低配置电脑不需要常驻运行。把 `DOUYIN_ACCESS_TOKEN` 加到 GitHub 仓库的 Actions Secret 后，云端工作流会运行；没有令牌时只会生成“未配置令牌”的状态报告，不会伪造结果。微信推送可把 `PUSHPLUS_TOKEN` 加到 Secret，先在 PushPlus 完成个人微信绑定，再由工作流发送日报。企业微信机器人可使用 `WECHAT_ROBOT_WEBHOOK`，它推送到群聊。
+
+本地调试命令：`node douyin-monitor/cli.js run`；仅根据已保存数据生成报告：`node douyin-monitor/cli.js report --skip-collect`；分享链接信息可按 `douyin-monitor/README.md` 的 JSON 格式导入。抖音接口权限、平台返回字段和 GitHub 定时任务都可能变化，日报需要人工核验。
+
 ## 数据口径与边界
 
 - 腾讯、新浪、东方财富公开接口都可能访问失败或改变字段。日线结构采用腾讯前复权数据，备用采用新浪原始日线除以逐日复权因子；实际价格与未复权分钟记录也可来自新浪。不同来源的复权算法可能产生小幅差异。

@@ -65,8 +65,21 @@ function render(data){
  const limits=$('#limitations');limits.replaceChildren();for(const line of data.limitations||[])limits.append(el('p',line));
  const news=$('#news');news.replaceChildren();$('#newsStatus').textContent=data.news?.note||'仅采集公开媒体线索；不保证事件首次公开时间，不能自动认定公司受益。';for(const n of (data.news?.items||[]).slice(0,20)){const line=el('div',undefined,'item'),a=el('a',n.title);a.href=n.url;a.target='_blank';a.rel='noopener';line.append(a,el('small',new Date(new Date(n.publishedAt).getTime()+8*3600000).toISOString().slice(11,16)));news.append(line);}if(!data.news?.items?.length)news.append(el('p',data.news?.error||'没有取得目标日期的消息线索，不代表当天没有催化。','note'));
 }
-async function loadDate(date){try{render(await get('data/results-'+date+'.json?v='+Date.now()));}catch{render({date,status:'idle',message:'该日期尚未生成结果，请等待自动扫描或运行一次。'});}}
-async function refresh(){manifest=await get('data/manifest.json?v='+Date.now()).catch(()=>({dates:[]}));const selected=$('#dateSelect').value;$('#dateSelect').replaceChildren();const dates=[...new Set([today,...manifest.dates.map(x=>x.date)])].sort().reverse();for(const date of dates){const o=el('option',date+(date===today?' · 今天':''));o.value=date;$('#dateSelect').append(o);}$('#dateSelect').value=dates.includes(selected)?selected:(manifest.dates[0]?.date||today);await loadDate($('#dateSelect').value);
+function renderDouyin(data){
+ const statusNode=$('#douyinStatus'),overview=$('#douyinOverview'),items=$('#douyinItems');overview.replaceChildren();items.replaceChildren();
+ if(!data){statusNode.textContent='该日期没有抖音观点日报，或日报工作流尚未运行。';return;}
+ const s=data.summary||{};statusNode.textContent=`${data.date||''} · ${data.collection?.status||'未知'} · 观点只进入待核实观察池，不产生买入指令。`;
+ row(overview,'新增作品',String(s.newRecords??0));row(overview,'纳入分析',String(s.analyzed??0));row(overview,'观察候选',String(s.watchlist??0));row(overview,'待核实',String(s.pending??0));
+ if(data.collection?.errors?.length)for(const error of data.collection.errors.slice(0,3))items.append(el('p',error,'note'));
+ if(!data.items?.length){items.append(el('p','当前没有已采集的抖音作品。没有令牌时可先手动导入分享链接信息。','note'));return;}
+ for(const item of data.items.slice(0,20)){const a=item.analysis||{},card=el('article',undefined,'item'),left=el('div');left.append(el('strong',item.author||'未知作者'),el('br'),el('span',`${a.direction||'—'} · ${(a.sectors||[]).join('、')||'未识别题材'} · ${a.horizon||'未说明'} · 评分 ${a.score??'—'}`),el('br'),el('small',a.summary||item.title||''));const right=item.url?publicLink(item.url,'打开视频'):el('span','无链接');card.append(left,right);items.append(card);}
+}
+async function loadDate(date){
+ let market;try{market=await get('data/results-'+date+'.json?v='+Date.now());}catch{market={date,status:'idle',message:'该日期尚未生成结果，请等待自动扫描或运行一次。'};}
+ render(market);
+ const douyin=await get('data/douyin-report-'+date+'.json?v='+Date.now()).catch(()=>null);renderDouyin(douyin);
+}
+async function refresh(){const [mainManifest,douyinManifest]=await Promise.all([get('data/manifest.json?v='+Date.now()).catch(()=>({dates:[]})),get('data/douyin-manifest.json?v='+Date.now()).catch(()=>({dates:[]}))]);manifest=mainManifest;const selected=$('#dateSelect').value;$('#dateSelect').replaceChildren();const dates=[...new Set([today,...manifest.dates.map(x=>x.date),...(douyinManifest.dates||[]).map(x=>typeof x==='string'?x:x.date)])].sort().reverse();for(const date of dates){const o=el('option',date+(date===today?' · 今天':''));o.value=date;$('#dateSelect').append(o);}$('#dateSelect').value=dates.includes(selected)?selected:(manifest.dates[0]?.date||douyinManifest.dates?.[0]?.date||today);await loadDate($('#dateSelect').value);
  const site=await get('data/site.json').catch(()=>null);if(site?.repository){$('#actionsLink').href='https://github.com/'+site.repository+'/actions/workflows/screen.yml';$('#actionsLink').hidden=false;$('#schedule').textContent='GitHub云端定时；可能延迟';}
 }
 async function poll(){if(!local)return;const state=await get('/api/status').catch(()=>null);if(state?.status==='running'){busy=true;$('#scan').disabled=true;$('#progress').hidden=false;$('#progress').max=state.total||1;$('#progress').value=state.done||0;status(state.phase+' '+state.done+'/'+state.total);$('#runBadge').textContent='正在运行';}else if(busy){busy=false;$('#scan').disabled=false;$('#progress').hidden=true;await refresh();}}

@@ -1,0 +1,28 @@
+{
+  "creators": [
+    "舵手k神",
+    "全能野人",
+    "背个竹筐",
+    "迷途小书童",
+    "追龙徐哥",
+    "红鼻小丑"
+  ],
+  "keywords": [
+    "A股大盘",
+    "A股热点",
+    "短线选股",
+    "板块轮动",
+    "涨停复盘"
+  ],
+  "publishTime": 1,
+  "pageSize": 20,
+  "maxPages": 3,
+  "sortType": 1,
+  "reportDays": 3,
+  "storageFile": "douyin-monitor/data/douyin-records.json",
+  "publicDataDir": "public/data",
+  "reportDir": "douyin-monitor/reports",
+  "push": {
+    "provider": "none"
+  }
+}
