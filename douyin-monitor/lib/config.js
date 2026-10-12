@@ -23,6 +23,9 @@ function load(root) {
   if (env.PUSHPLUS_TOPIC) config.push.topic = env.PUSHPLUS_TOPIC;
   if (env.WECHAT_ROBOT_WEBHOOK) config.push = { ...config.push, provider: 'wechat-robot', webhook: env.WECHAT_ROBOT_WEBHOOK };
   if (env.DOUYIN_ACCESS_TOKEN) config.douyinAccessToken = env.DOUYIN_ACCESS_TOKEN;
+  if (env.DOUYIN_CLIENT_KEY) config.douyinClientKey = env.DOUYIN_CLIENT_KEY;
+  if (env.DOUYIN_CLIENT_SECRET) config.douyinClientSecret = env.DOUYIN_CLIENT_SECRET;
+  if (env.DOUYIN_DEVICE_ID) config.douyinDeviceId = env.DOUYIN_DEVICE_ID;
   config.creators = Array.isArray(config.creators) ? config.creators : [];
   config.keywords = Array.isArray(config.keywords) ? config.keywords : [];
   return config;

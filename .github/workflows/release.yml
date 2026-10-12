@@ -13,6 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: 发布前测试与项目包校验
+        run: |
+          node --test test/*.test.js
+          node build-bundle.js
+          git diff --exit-code -- project-bundle.json
       - name: 创建发布页
         env:
           GH_TOKEN: ${{ github.token }}

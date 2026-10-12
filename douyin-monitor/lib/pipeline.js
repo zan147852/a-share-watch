@@ -13,7 +13,7 @@ async function run({ root, date = dateToday(), skipCollect = false } = {}) {
   const config = configLoader.load(root);
   const storageFile = path.join(root, config.storageFile || 'data/douyin-records.json');
   let collection = { status: 'skipped', records: [], errors: ['本轮跳过网络采集'] };
-  if (!skipCollect) collection = await douyin.search({ token: config.douyinAccessToken, creators: config.creators, keywords: config.keywords, publishTime: config.publishTime, sortType: config.sortType, pageSize: config.pageSize, maxPages: config.maxPages });
+  if (!skipCollect) collection = await douyin.search({ token: config.douyinAccessToken, clientKey: config.douyinClientKey, clientSecret: config.douyinClientSecret, deviceId: config.douyinDeviceId, creators: config.creators, keywords: config.keywords, publishTime: config.publishTime, sortType: config.sortType, pageSize: config.pageSize, maxPages: config.maxPages });
   const saved = store.upsert(storageFile, collection.records);
   const records = analysis.analyze(saved.records);
   const written = reportWriter.writeReport({ root, date, records, collection, newRecords: saved.addedRecords || [], config });

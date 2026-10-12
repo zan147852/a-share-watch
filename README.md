@@ -1,4 +1,4 @@
-# A股收盘观察系统 v0.3
+# A股收盘观察系统
 
 提供自动行情采集、价格筛选、五步主线证据、冻结题材与次日验证、历史结果、错误状态和适配手机的网页。没有 npm 依赖，Node.js 22 以上即可运行。
 
@@ -74,13 +74,19 @@ GitHub 定时任务可能延迟，默认分支必须存在；长期不活跃仓�
 
 `douyin-monitor/` 是独立的抖音观点模块，与收盘筛选共用 GitHub Actions 和 GitHub Pages。它按工作日北京时间约22:00运行，使用抖音官方视频搜索接口获取配置中的作者和关键词，去重后生成 `public/data/douyin-report-YYYY-MM-DD.json` 与 Markdown 日报。观点只进入观察候选，不会下单或改变原有策略。
 
-低配置电脑不需要常驻运行。把 `DOUYIN_ACCESS_TOKEN` 加到 GitHub 仓库的 Actions Secret 后，云端工作流会运行；没有令牌时只会生成“未配置令牌”的状态报告，不会伪造结果。微信推送可把 `PUSHPLUS_TOKEN` 加到 Secret，先在 PushPlus 完成个人微信绑定，再由工作流发送日报。企业微信机器人可使用 `WECHAT_ROBOT_WEBHOOK`，它推送到群聊。
+低配置电脑不需要常驻运行。接口获批后，把 `DOUYIN_CLIENT_KEY`、`DOUYIN_CLIENT_SECRET` 和按平台要求取得的 `DOUYIN_DEVICE_ID` 加到 GitHub Actions Secrets，每轮会自动获取应用令牌。`DOUYIN_ACCESS_TOKEN` 仅兼容临时调试，两小时令牌不能作为长期配置。缺配置只生成状态报告。微信推送可配置 `PUSHPLUS_TOKEN`；企业微信群可配置 `WECHAT_ROBOT_WEBHOOK`。
+
+**目前没有获得真实抖音接口权限。** 官方个人主体可创建的应用与本接口所属的移动/网站应用路径存在区别，不能保证个人免费开通。先看 [申请限制和已备好的申请材料](docs/douyin-application.md)，确认资格后运行 Actions 中的“抖音接口接入检查（手动）”。代码通过测试不等于真实采集完成。
 
 本地调试命令：`node douyin-monitor/cli.js run`；仅根据已保存数据生成报告：`node douyin-monitor/cli.js report --skip-collect`；分享链接信息可按 `douyin-monitor/README.md` 的 JSON 格式导入。抖音接口权限、平台返回字段和 GitHub 定时任务都可能变化，日报需要人工核验。
 
 ## 版本管理与发布
 
-项目版本写在 `package.json`，发布记录写在 `CHANGELOG.md`。本地完成改动后可运行 `powershell -ExecutionPolicy Bypass -File scripts/release.ps1 -Bump patch -Message "说明本次改动"`，脚本会先重新生成项目包、运行全部测试、检查差异，再提交、创建 Git tag 并推送到 GitHub。推送 tag 后，GitHub Actions 会自动创建对应 Release；每次 push 和 Pull Request 也会自动运行测试。后续修改由 Codex 按这套流程提交和上传。
+项目版本写在 `package.json`，发布记录写在 `CHANGELOG.md`。用户已授权后续每次完成更新都自动管理版本并上传，约定保存于 `AGENTS.md`。发布使用 PowerShell 7：`pwsh -NoProfile -File scripts/release.ps1 -Bump patch -Message "说明本次改动"`。新增兼容功能可改用 `-Bump minor`。
+
+脚本核对远端状态与敏感文件，重新生成项目包、运行全部测试和差异检查，再提交、创建 Git tag，并将主分支和标签一次性推送；任一步失败立即停止，不使用 force push。推送后核对远程提交和标签。GitHub 的测试与 Release 任务都检查测试和项目包，通过后才创建 Release。每日数据更新只提交数据，不提升程序版本。
+
+如果测试失败，保留改动以便修复；如果上传失败，保留本地提交和标签，核对后可用 `git push --atomic origin HEAD:refs/heads/main refs/tags/vX.Y.Z` 重试该版本，不重复打标签。后续更新由 Codex 完成并核对云端结果，脚本不会监控电脑上的每一次文件保存。
 
 ## 数据口径与边界
 

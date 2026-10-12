@@ -4,3 +4,10 @@ node_modules/
 *.zip
 cls-sample.html
 cls-script-sample.js
+.env
+.env.*
+**/config.local.json
+*.pem
+*.key
+*.p12
+*.pfx

@@ -1,0 +1,30 @@
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
+const { execFileSync } = require('child_process');
+const { buildBundle } = require('../build-bundle');
+
+test('项目包跨行尾一致，忽略本地凭证与运行数据，包括误跟踪的凭证', t => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'a-share-bundle-test-'));
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  execFileSync('git', ['init', '--quiet'], { cwd: root });
+  fs.mkdirSync(path.join(root, 'public/data'), { recursive: true });
+  fs.mkdirSync(path.join(root, 'douyin-monitor'), { recursive: true });
+  fs.writeFileSync(path.join(root, '.gitignore'), '.env*\n**/config.local.json\n');
+  fs.writeFileSync(path.join(root, '.env'), 'SECRET=synthetic-test-secret');
+  fs.writeFileSync(path.join(root, 'douyin-monitor/config.local.json'), '{"token":"synthetic-test-secret"}');
+  fs.writeFileSync(path.join(root, 'public/data/report.json'), '{}');
+  fs.writeFileSync(path.join(root, 'z.js'), 'first\r\nsecond\r\n');
+  fs.writeFileSync(path.join(root, 'a.md'), '# title\r\n');
+  execFileSync('git', ['add', '-f', '.env'], { cwd: root });
+  const files = buildBundle(root);
+  assert.deepEqual(Object.keys(files), ['.gitignore', 'a.md', 'z.js']);
+  assert.equal(Buffer.from(files['z.js'], 'base64').toString(), 'first\nsecond\n');
+  const first = fs.readFileSync(path.join(root, 'project-bundle.json'), 'utf8');
+  fs.writeFileSync(path.join(root, 'z.js'), 'first\nsecond\n');
+  fs.writeFileSync(path.join(root, 'a.md'), '# title\n');
+  buildBundle(root);
+  assert.equal(fs.readFileSync(path.join(root, 'project-bundle.json'), 'utf8'), first);
+});

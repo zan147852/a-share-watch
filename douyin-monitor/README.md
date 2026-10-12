@@ -6,15 +6,20 @@
 
 在仓库 `Settings → Secrets and variables → Actions` 中添加：
 
-- `DOUYIN_ACCESS_TOKEN`：抖音官方视频搜索接口令牌；
+- `DOUYIN_CLIENT_KEY` 和 `DOUYIN_CLIENT_SECRET`：获批应用的密钥，每轮自动获取两小时有效的应用令牌；
+- `DOUYIN_DEVICE_ID`：官方搜索接口必填设备 ID，按平台指导提供，以字符串保存；
+- `DOUYIN_ACCESS_TOKEN`：可选，仅临时调试，填写 `client_token` 接口返回的令牌；
 - `PUSHPLUS_TOKEN`：可选，用于把日报推到个人微信；
 - `PUSHPLUS_TOPIC`：可选，用于 PushPlus 多人或多设备转发。
 
-没有 `DOUYIN_ACCESS_TOKEN` 时，工作流仍会生成日报，但只会报告“未配置令牌”，不会伪造采集结果。
+未配置应用凭证或必填设备 ID 时，工作流仍会生成状态报告，但没有真实采集结果。详情见 [个人申请限制、申请材料和接入说明](../docs/douyin-application.md)。个人目前支持的小程序不等同于获得移动/网站应用的视频搜索能力，免费资格、额度和使用场景需要平台确认。
+
+先在 Actions 运行“抖音接口接入检查（手动）”，检查只查询一次，不推微信、不保存日报。视频搜索使用 `sort_type=2`（最新发布），请求头传令牌，正文取平台的 `high_quality_text`；缺正文会保留 `title-only` 标记，不表示已经看完整个视频。
 
 ## 本地运行
 
 ```powershell
+node douyin-monitor/cli.js check
 node douyin-monitor/cli.js run
 node douyin-monitor/cli.js report --skip-collect
 node douyin-monitor/cli.js import --file data/share.json

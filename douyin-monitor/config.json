@@ -17,7 +17,7 @@
   "publishTime": 1,
   "pageSize": 20,
   "maxPages": 3,
-  "sortType": 1,
+  "sortType": 2,
   "reportDays": 3,
   "storageFile": "douyin-monitor/data/douyin-records.json",
   "publicDataDir": "public/data",
