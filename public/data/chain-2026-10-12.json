@@ -1,0 +1,2971 @@
+{
+  "schema": 1,
+  "version": "v0.1-chain-observation",
+  "date": "2026-10-12",
+  "previousDate": "2026-10-09",
+  "generatedAt": "2026-10-12T14:48:31.331Z",
+  "frozenAt": "2026-10-12T14:48:31.331Z",
+  "retrospective": false,
+  "status": "partial",
+  "coverage": 0.9943426114505545,
+  "metrics": {
+    "scope": "主板与创业板；排除ST、退市与上市不足60交易日",
+    "coverage": 0.9943426114505545,
+    "complete": false,
+    "limitCount": 44,
+    "downCount": 19,
+    "highestBoard": 6,
+    "brokenCount": 30,
+    "breakRate": null,
+    "previousLimitCount": 68,
+    "feedback": null,
+    "promotionRate": null
+  },
+  "sentiment": {
+    "state": "证据不足",
+    "reason": "市场覆盖或昨日涨停反馈不完整",
+    "allowTargetBoards": [],
+    "definition": "初版规则标签，供次日研究；不是市场事实或胜率预测。"
+  },
+  "candidates": [
+    {
+      "code": "002576",
+      "name": "通达动力",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 73,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 16.07,
+      "low": 14.6,
+      "amount": 141156693,
+      "turnoverRate": 5.4776997566223145,
+      "volumeRatio": 3.3525727711589743,
+      "firstTime": "09:38:18",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [
+        {
+          "id": "gn_fn",
+          "name": "风能"
+        },
+        {
+          "id": "gn_fd",
+          "name": "风电"
+        }
+      ],
+      "hard": [],
+      "missing": [
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 14.6,
+        "nextLimitReference": 17.68,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "600192",
+      "name": "长城电工",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 73,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 7.93,
+      "low": 7.18,
+      "amount": 150851604,
+      "turnoverRate": 4.376723289489746,
+      "volumeRatio": 2.0430826781638345,
+      "firstTime": "09:37:04",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [
+        {
+          "id": "gn_fn",
+          "name": "风能"
+        },
+        {
+          "id": "gn_fd",
+          "name": "风电"
+        },
+        {
+          "id": "gn_ldc",
+          "name": "锂电池"
+        },
+        {
+          "id": "gn_sqrl",
+          "name": "氢燃料"
+        },
+        {
+          "id": "gn_zndw",
+          "name": "智能电网"
+        }
+      ],
+      "hard": [],
+      "missing": [
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 7.18,
+        "nextLimitReference": 8.72,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "002531",
+      "name": "天顺风能",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 65,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 8.27,
+      "low": 7.5,
+      "amount": 839926256,
+      "turnoverRate": 5.8475775718688965,
+      "volumeRatio": 0.6052244320719222,
+      "firstTime": "09:38:45",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [
+        {
+          "id": "gn_fn",
+          "name": "风能"
+        },
+        {
+          "id": "gn_fd",
+          "name": "风电"
+        }
+      ],
+      "hard": [],
+      "missing": [
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 7.5,
+        "nextLimitReference": 9.1,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "002343",
+      "name": "慈文传媒",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 55,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 6.69,
+      "low": 6.6,
+      "amount": 189454780,
+      "turnoverRate": 5.986037731170654,
+      "volumeRatio": 2.029403218164407,
+      "firstTime": "09:30:00",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 6.6,
+        "nextLimitReference": 7.36,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "601595",
+      "name": "上海电影",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 55,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 27.21,
+      "low": 24.77,
+      "amount": 753730736,
+      "turnoverRate": 6.346972465515137,
+      "volumeRatio": 3.0693031917533604,
+      "firstTime": "10:21:54",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 24.77,
+        "nextLimitReference": 29.93,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "603528",
+      "name": "多伦科技",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 55,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 7.05,
+      "low": 6.4,
+      "amount": 106282238,
+      "turnoverRate": 2.1839187145233154,
+      "volumeRatio": 1.9709060320317455,
+      "firstTime": "09:33:36",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 6.4,
+        "nextLimitReference": 7.76,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "000892",
+      "name": "欢瑞世纪",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 5.34,
+      "low": 5,
+      "amount": 1258263824,
+      "turnoverRate": 33.805519104003906,
+      "volumeRatio": 2.0744827157520143,
+      "firstTime": "09:31:54",
+      "breaks": 3,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 5,
+        "nextLimitReference": 5.87,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "001330",
+      "name": "博纳影业",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 7.67,
+      "low": 7.38,
+      "amount": 1572119120,
+      "turnoverRate": 17.800477981567383,
+      "volumeRatio": 1.0722304979761257,
+      "firstTime": "09:30:09",
+      "breaks": 2,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 7.38,
+        "nextLimitReference": 8.44,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "002990",
+      "name": "盛视科技",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 55.95,
+      "low": 50.89,
+      "amount": 681227392,
+      "turnoverRate": 9.033891677856445,
+      "volumeRatio": 0.9548622279403881,
+      "firstTime": "09:54:06",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 50.89,
+        "nextLimitReference": 61.55,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "301419",
+      "name": "阿莱德",
+      "segment": "创业板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 47.7,
+      "low": 39.55,
+      "amount": 422151504,
+      "turnoverRate": 8.275634765625,
+      "volumeRatio": 1.6775400972822452,
+      "firstTime": "09:55:45",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 39.55,
+        "nextLimitReference": 57.24,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "601811",
+      "name": "新华文轩",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 23,
+      "low": 20.7,
+      "amount": 1264841568,
+      "turnoverRate": 7.267580509185791,
+      "volumeRatio": 1.0596198777113126,
+      "firstTime": "09:54:53",
+      "breaks": 3,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [
+        {
+          "id": "gn_hHg",
+          "name": "含H股"
+        }
+      ],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 20.7,
+        "nextLimitReference": 25.3,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "603500",
+      "name": "祥和实业",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 11.04,
+      "low": 10,
+      "amount": 468892736,
+      "turnoverRate": 12.980311393737793,
+      "volumeRatio": 2.0275923186109215,
+      "firstTime": "10:07:27",
+      "breaks": 3,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 10,
+        "nextLimitReference": 12.14,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "603533",
+      "name": "掌阅科技",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 27.98,
+      "low": 25.22,
+      "amount": 2096530448,
+      "turnoverRate": 17.835926055908203,
+      "volumeRatio": 2.6318810038368072,
+      "firstTime": "10:10:58",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 25.22,
+        "nextLimitReference": 30.78,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "603992",
+      "name": "松霖科技",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 20.94,
+      "low": 19.15,
+      "amount": 157046556,
+      "turnoverRate": 1.7309352159500122,
+      "volumeRatio": 2.9767412973946525,
+      "firstTime": "10:22:40",
+      "breaks": 2,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 19.15,
+        "nextLimitReference": 23.03,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "002692",
+      "name": "远程股份",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 5.24,
+      "low": 4.66,
+      "amount": 266233014,
+      "turnoverRate": 7.424307346343994,
+      "volumeRatio": 4.655373617485155,
+      "firstTime": "09:40:39",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 4.66,
+        "nextLimitReference": 5.76,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "300829",
+      "name": "金丹科技",
+      "segment": "创业板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 28.02,
+      "low": 24.35,
+      "amount": 613444352,
+      "turnoverRate": 14.129793167114258,
+      "volumeRatio": 0.7481223488510507,
+      "firstTime": "09:47:36",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 24.35,
+        "nextLimitReference": 33.62,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "301658",
+      "name": "首航新能",
+      "segment": "创业板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 27.12,
+      "low": 22.18,
+      "amount": 512184288,
+      "turnoverRate": 21.169889450073242,
+      "volumeRatio": 3.954326692615957,
+      "firstTime": "13:15:09",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 22.18,
+        "nextLimitReference": 32.54,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "603230",
+      "name": "内蒙新华",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 14.63,
+      "low": 12.95,
+      "amount": 825104576,
+      "turnoverRate": 16.91531753540039,
+      "volumeRatio": 1.2221144063969027,
+      "firstTime": "13:55:20",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 12.95,
+        "nextLimitReference": 16.09,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "603336",
+      "name": "宏辉果蔬",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 10.45,
+      "low": 9.37,
+      "amount": 326095520,
+      "turnoverRate": 5.349825382232666,
+      "volumeRatio": 2.3686855829448006,
+      "firstTime": "13:39:30",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 9.37,
+        "nextLimitReference": 11.5,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "605577",
+      "name": "龙版传媒",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 17.82,
+      "low": 17.79,
+      "amount": 252983433,
+      "turnoverRate": 3.194258689880371,
+      "volumeRatio": 0.524333627570109,
+      "firstTime": "09:30:02",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": true,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 17.79,
+        "nextLimitReference": 19.6,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "002441",
+      "name": "众业达",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 9.21,
+      "low": 8.33,
+      "amount": 254621752,
+      "turnoverRate": 6.977733135223389,
+      "volumeRatio": 5.961433037817465,
+      "firstTime": "09:37:48",
+      "breaks": 2,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 8.33,
+        "nextLimitReference": 10.13,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "301052",
+      "name": "果麦文化",
+      "segment": "创业板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 30.47,
+      "low": 25.69,
+      "amount": 583938704,
+      "turnoverRate": 25.413814544677734,
+      "volumeRatio": 4.286843477237181,
+      "firstTime": "10:07:06",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 25.69,
+        "nextLimitReference": 36.56,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "600851",
+      "name": "海欣股份",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 8.6,
+      "low": 8.09,
+      "amount": 260385601,
+      "turnoverRate": 4.19442081451416,
+      "volumeRatio": 5.047074625016707,
+      "firstTime": "09:31:12",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 8.09,
+        "nextLimitReference": 9.46,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "601929",
+      "name": "吉视传媒",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 2.75,
+      "low": 2.55,
+      "amount": 1396036320,
+      "turnoverRate": 14.769954681396484,
+      "volumeRatio": 4.116063950691578,
+      "firstTime": "09:34:12",
+      "breaks": 2,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 2.55,
+        "nextLimitReference": 3.03,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "603232",
+      "name": "格尔软件",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 18.68,
+      "low": 16.92,
+      "amount": 744347904,
+      "turnoverRate": 18.071630477905273,
+      "volumeRatio": 2.4031986919146155,
+      "firstTime": "11:10:27",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 16.92,
+        "nextLimitReference": 20.55,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "603968",
+      "name": "醋化股份",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 13.05,
+      "low": 11.41,
+      "amount": 321073552,
+      "turnoverRate": 12.849183082580566,
+      "volumeRatio": 1.5198950408174599,
+      "firstTime": "14:03:28",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 11.41,
+        "nextLimitReference": 14.36,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "603032",
+      "name": "德新科技",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 25,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 20.42,
+      "low": 18.55,
+      "amount": 653535808,
+      "turnoverRate": 13.92868423461914,
+      "volumeRatio": 4.748738053967957,
+      "firstTime": "09:37:47",
+      "breaks": 4,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 18.55,
+        "nextLimitReference": 22.46,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "001231",
+      "name": "农心科技",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 18,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 25.61,
+      "low": 22.61,
+      "amount": 192490606,
+      "turnoverRate": 15.525607109069824,
+      "volumeRatio": 5.681021855883282,
+      "firstTime": "13:23:33",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [],
+      "hard": [],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 22.61,
+        "nextLimitReference": 28.17,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "600831",
+      "name": "广电网络",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 3.91,
+      "low": 3.72,
+      "amount": 154024936,
+      "turnoverRate": 5.595211982727051,
+      "volumeRatio": 1.3287046841190748,
+      "firstTime": "09:25:01",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": true,
+      "themes": [
+        {
+          "id": "gn_whzx",
+          "name": "文化振兴"
+        }
+      ],
+      "hard": [
+        "已覆盖题材内涨停联动不足"
+      ],
+      "missing": [
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 3.72,
+        "nextLimitReference": 4.3,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "600560",
+      "name": "金自天正",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 45,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 0,
+          "max": 10
+        }
+      ],
+      "close": 12.53,
+      "low": 11.34,
+      "amount": 80256859,
+      "turnoverRate": 2.932050943374634,
+      "volumeRatio": 2.3344001310060767,
+      "firstTime": "09:54:36",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [
+        {
+          "id": "gn_zndw",
+          "name": "智能电网"
+        }
+      ],
+      "hard": [
+        "成交额低于研究流动性门槛",
+        "已覆盖题材内涨停联动不足"
+      ],
+      "missing": [
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 11.34,
+        "nextLimitReference": 13.78,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "603096",
+      "name": "新经典",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "D",
+      "score": 45,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 0,
+          "max": 10
+        }
+      ],
+      "close": 19.06,
+      "low": 19.06,
+      "amount": 70752073,
+      "turnoverRate": 2.406769037246704,
+      "volumeRatio": 1.4095261962803485,
+      "firstTime": "09:25:01",
+      "breaks": 0,
+      "isOnePrice": true,
+      "isT": false,
+      "themes": [],
+      "hard": [
+        "当日一字板：初版跳过接力观察",
+        "成交额低于研究流动性门槛"
+      ],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 19.06,
+        "nextLimitReference": 20.97,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "002264",
+      "name": "新 华 都",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 8.14,
+      "low": 7.21,
+      "amount": 1122462176,
+      "turnoverRate": 21.703718185424805,
+      "volumeRatio": 2.5832117348897934,
+      "firstTime": "10:12:12",
+      "breaks": 7,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [
+        {
+          "id": "gn_bcgn",
+          "name": "博彩概念"
+        },
+        {
+          "id": "gn_smgn",
+          "name": "赛马概念"
+        }
+      ],
+      "hard": [
+        "已覆盖题材内涨停联动不足"
+      ],
+      "missing": [
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 7.21,
+        "nextLimitReference": 8.95,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "002696",
+      "name": "百洋股份",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "D",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 8.05,
+      "low": 7.69,
+      "amount": 103751651,
+      "turnoverRate": 3.8936145305633545,
+      "volumeRatio": 0.6914044650942147,
+      "firstTime": "09:30:12",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [
+        {
+          "id": "gn_sygg",
+          "name": "水域改革"
+        },
+        {
+          "id": "gn_scp1",
+          "name": "水产品"
+        }
+      ],
+      "hard": [
+        "已覆盖题材内涨停联动不足"
+      ],
+      "missing": [
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 7.69,
+        "nextLimitReference": 8.86,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "600693",
+      "name": "东百集团",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 11.18,
+      "low": 11.18,
+      "amount": 302864560,
+      "turnoverRate": 3.1175286769866943,
+      "volumeRatio": 0.508184254146341,
+      "firstTime": "09:25:02",
+      "breaks": 0,
+      "isOnePrice": true,
+      "isT": false,
+      "themes": [
+        {
+          "id": "gn_nmgh",
+          "name": "内贸规划"
+        }
+      ],
+      "hard": [
+        "当日一字板：初版跳过接力观察"
+      ],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 11.18,
+        "nextLimitReference": 12.3,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "601127",
+      "name": "赛力斯",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 51.24,
+      "low": 45.56,
+      "amount": 2642317664,
+      "turnoverRate": 3.519939422607422,
+      "volumeRatio": 1.5466623475420493,
+      "firstTime": "14:31:29",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [
+        {
+          "id": "gn_gtdc",
+          "name": "固态电池"
+        }
+      ],
+      "hard": [
+        "已覆盖题材内涨停联动不足"
+      ],
+      "missing": [
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 45.56,
+        "nextLimitReference": 56.36,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "605287",
+      "name": "德才股份",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "D",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 44.2,
+      "low": 44.2,
+      "amount": 103640160,
+      "turnoverRate": 1.6748571395874023,
+      "volumeRatio": 0.3623898441822582,
+      "firstTime": "09:25:01",
+      "breaks": 0,
+      "isOnePrice": true,
+      "isT": false,
+      "themes": [],
+      "hard": [
+        "当日一字板：初版跳过接力观察"
+      ],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 44.2,
+        "nextLimitReference": 48.62,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "002591",
+      "name": "恒大高新",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 7.16,
+      "low": 6.48,
+      "amount": 259630736,
+      "turnoverRate": 17.000396728515625,
+      "volumeRatio": 3.2841775554406993,
+      "firstTime": "14:25:24",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [
+        {
+          "id": "gn_ljfl",
+          "name": "垃圾分类"
+        }
+      ],
+      "hard": [
+        "已覆盖题材内涨停联动不足"
+      ],
+      "missing": [
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 6.48,
+        "nextLimitReference": 7.88,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "605136",
+      "name": "丽人丽妆",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "D",
+      "score": 30,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 0,
+          "max": 10
+        }
+      ],
+      "close": 10.38,
+      "low": 10.38,
+      "amount": 42697922,
+      "turnoverRate": 1.0271925926208496,
+      "volumeRatio": 0.19751145648073815,
+      "firstTime": "09:25:01",
+      "breaks": 0,
+      "isOnePrice": true,
+      "isT": false,
+      "themes": [],
+      "hard": [
+        "当日一字板：初版跳过接力观察",
+        "成交额低于研究流动性门槛"
+      ],
+      "missing": [
+        "目标日题材与完整首板证据",
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板核心接力"
+        ],
+        "referenceLow": 10.38,
+        "nextLimitReference": 11.42,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "002908",
+      "name": "德生科技",
+      "segment": "主板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 25,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 8.02,
+      "low": 7.26,
+      "amount": 232753947,
+      "turnoverRate": 9.201813697814941,
+      "volumeRatio": 6.057386770724126,
+      "firstTime": "13:08:30",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "themes": [
+        {
+          "id": "gn_hwhm",
+          "name": "华为鸿蒙"
+        }
+      ],
+      "hard": [
+        "已覆盖题材内涨停联动不足"
+      ],
+      "missing": [
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 7.26,
+        "nextLimitReference": 8.82,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    },
+    {
+      "code": "300006",
+      "name": "莱美药业",
+      "segment": "创业板",
+      "date": "2026-10-12",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 25,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 6.56,
+      "low": 6.21,
+      "amount": 1333525056,
+      "turnoverRate": 19.33885955810547,
+      "volumeRatio": 7.113760267348229,
+      "firstTime": "09:30:00",
+      "breaks": 8,
+      "isOnePrice": false,
+      "isT": true,
+      "themes": [
+        {
+          "id": "gn_cjxj",
+          "name": "超级细菌"
+        }
+      ],
+      "hard": [
+        "已覆盖题材内涨停联动不足"
+      ],
+      "missing": [
+        "市场完整覆盖",
+        "市场情绪"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板弱转强",
+          "二板分歧回封"
+        ],
+        "referenceLow": 6.21,
+        "nextLimitReference": 7.87,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交"
+    }
+  ],
+  "review": {
+    "status": "pending",
+    "items": [],
+    "reason": "没有上一交易日事前冻结的完整名单；历史重扫不计成绩",
+    "label": "观察反馈，非交易收益"
+  },
+  "unresolved": [
+    {
+      "code": "600825",
+      "name": "新华传媒",
+      "reason": "复核缺失、前一交易日缺失或连板窗口不完整"
+    },
+    {
+      "code": "000582",
+      "name": "北部湾港",
+      "reason": "停牌、缺日线或价量无效"
+    }
+  ],
+  "errors": [],
+  "settings": {
+    "minimumCoverage": 0.98,
+    "maxChecks": 250,
+    "maxCheckMinutes": 4,
+    "minimumAmount": 100000000,
+    "minimumThemeLimits": 3,
+    "minimumThemeCoverage": 0.95,
+    "earlyTime": "10:30:00",
+    "maximumBreaks": 3,
+    "minimumScore": 70,
+    "watchScore": 50,
+    "minimumVolumeRatio": 0.8,
+    "maximumVolumeRatio": 4,
+    "retreatDownCount": 15,
+    "retreatFeedback": -0.02,
+    "risingLimitCount": 40,
+    "risingPromotion": 0.3,
+    "iceLimitCount": 15
+  },
+  "snapshotFile": "market-snapshot-2026-10-12.json",
+  "note": "A允许次日观察；B等待确认；C证据不足或低分；D排除。研究分不是胜率，未产生盘中信号或成交。"
+}
