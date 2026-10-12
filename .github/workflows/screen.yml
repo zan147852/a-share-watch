@@ -58,6 +58,10 @@ jobs:
           git add .
           if ! git diff --cached --quiet; then
             git commit -m "Update daily screen results"
+            # A program release may have landed while the data scan was running.
+            # Reapply only this data commit; real conflicts stop instead of overwriting.
+            git fetch origin main
+            git rebase origin/main
             git push
           fi
       - uses: actions/upload-artifact@v4

@@ -75,6 +75,14 @@ function renderDouyin(data){
  if(!data.items?.length){items.append(el('p','当前没有已采集的抖音作品。没有令牌时可先手动导入分享链接信息。','note'));return;}
  for(const item of data.items.slice(0,20)){const a=item.analysis||{},card=el('article',undefined,'item'),left=el('div');left.append(el('strong',item.author||'未知作者'),el('br'),el('span',`${a.direction||'—'} · ${(a.sectors||[]).join('、')||'未识别题材'} · ${a.horizon||'未说明'} · 评分 ${a.score??'—'}`),el('br'),el('small',a.summary||item.title||''));const right=item.url?publicLink(item.url,'打开视频'):el('span','无链接');card.append(left,right);items.append(card);}
 }
+function setupSectionNav(){
+ const links=[...document.querySelectorAll('.section-nav a')],sections=links.map(link=>document.querySelector(link.hash)).filter(Boolean);
+ if(!links.length||!sections.length)return;
+ const activate=id=>{for(const link of links){const active=link.hash===`#${id}`;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');}};
+ const update=()=>{const offset=window.innerWidth<=900?86:42;let current=sections[0].id;for(const section of sections)if(section.getBoundingClientRect().top<=offset)current=section.id;activate(current);};
+ for(const link of links)link.addEventListener('click',()=>{activate(link.hash.slice(1));if(window.innerWidth<=900)link.scrollIntoView({inline:'nearest',block:'nearest'});});
+ window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update();
+}
 async function loadDate(date){
  let market;try{market=await get('data/results-'+date+'.json?v='+Date.now());}catch{market={date,status:'idle',message:'该日期尚未生成结果，请等待自动扫描或运行一次。'};}
  const chain=await get('data/chain-'+date+'.json?v='+Date.now()).catch(()=>null);if(chain)market.chain=chain;
@@ -85,6 +93,7 @@ async function refresh(){const [mainManifest,douyinManifest]=await Promise.all([
  const site=await get('data/site.json').catch(()=>null);if(site?.repository){$('#actionsLink').href='https://github.com/'+site.repository+'/actions/workflows/screen.yml';$('#actionsLink').hidden=false;$('#schedule').textContent='GitHub云端定时；可能延迟';}
 }
 async function poll(){if(!local)return;const state=await get('/api/status').catch(()=>null);if(state?.status==='running'){busy=true;$('#scan').disabled=true;$('#progress').hidden=false;$('#progress').max=state.total||1;$('#progress').value=state.done||0;status(state.phase+' '+state.done+'/'+state.total);$('#runBadge').textContent='正在运行';}else if(busy){busy=false;$('#scan').disabled=false;$('#progress').hidden=true;await refresh();}}
+setupSectionNav();
 $('#filter').addEventListener('change',()=>report&&render(report));$('#dateSelect').addEventListener('change',()=>loadDate($('#dateSelect').value));$('#refresh').addEventListener('click',refresh);
 $('#themeFilter').addEventListener('change',()=>report&&renderMainline(report.mainline));
 $('#chainFilter').addEventListener('change',()=>report&&renderChain(report.chain));
