@@ -1,4 +1,6 @@
 .cache/
+.private/
+qa/
 node_modules/
 *.log
 *.zip

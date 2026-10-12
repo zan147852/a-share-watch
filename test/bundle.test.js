@@ -16,6 +16,9 @@ test('项目包跨行尾一致，忽略本地凭证与运行数据，包括误�
   fs.writeFileSync(path.join(root, '.env'), 'SECRET=synthetic-test-secret');
   fs.writeFileSync(path.join(root, 'douyin-monitor/config.local.json'), '{"token":"synthetic-test-secret"}');
   fs.writeFileSync(path.join(root, 'public/data/report.json'), '{}');
+  fs.mkdirSync(path.join(root, '.private'), { recursive: true });
+  fs.writeFileSync(path.join(root, '.private/chain-ledger.json'), '{"equity":"private-test-value"}');
+  execFileSync('git', ['add', '-f', '.private/chain-ledger.json'], { cwd: root });
   fs.writeFileSync(path.join(root, 'z.js'), 'first\r\nsecond\r\n');
   fs.writeFileSync(path.join(root, 'a.md'), '# title\r\n');
   execFileSync('git', ['add', '-f', '.env'], { cwd: root });

@@ -38,6 +38,7 @@ function renderMainline(m){
 }
 function render(data){
  report=data;const acceptable=['complete','partial'].includes(data.status);
+ renderChain(data.chain);
  renderMainline(data.mainline);
  $('#reportDate').textContent=(data.date||today)+' / 收盘观察 v0.2';
  $('#runBadge').textContent=labels[data.status]||'暂无结果';
@@ -76,6 +77,7 @@ function renderDouyin(data){
 }
 async function loadDate(date){
  let market;try{market=await get('data/results-'+date+'.json?v='+Date.now());}catch{market={date,status:'idle',message:'该日期尚未生成结果，请等待自动扫描或运行一次。'};}
+ const chain=await get('data/chain-'+date+'.json?v='+Date.now()).catch(()=>null);if(chain)market.chain=chain;
  render(market);
  const douyin=await get('data/douyin-report-'+date+'.json?v='+Date.now()).catch(()=>null);renderDouyin(douyin);
 }
@@ -85,5 +87,40 @@ async function refresh(){const [mainManifest,douyinManifest]=await Promise.all([
 async function poll(){if(!local)return;const state=await get('/api/status').catch(()=>null);if(state?.status==='running'){busy=true;$('#scan').disabled=true;$('#progress').hidden=false;$('#progress').max=state.total||1;$('#progress').value=state.done||0;status(state.phase+' '+state.done+'/'+state.total);$('#runBadge').textContent='正在运行';}else if(busy){busy=false;$('#scan').disabled=false;$('#progress').hidden=true;await refresh();}}
 $('#filter').addEventListener('change',()=>report&&render(report));$('#dateSelect').addEventListener('change',()=>loadDate($('#dateSelect').value));$('#refresh').addEventListener('click',refresh);
 $('#themeFilter').addEventListener('change',()=>report&&renderMainline(report.mainline));
+$('#chainFilter').addEventListener('change',()=>report&&renderChain(report.chain));
 $('#scan').addEventListener('click',async()=>{try{const r=await fetch('/api/scan?date='+$('#dateSelect').value,{method:'POST'});const body=await r.json();if(!r.ok)throw new Error(body.error);busy=true;$('#scan').disabled=true;await poll();}catch(e){status(e.message,'bad');}});
 (async()=>{await refresh();local=await get('/api/status').then(()=>true).catch(()=>false);if(local){$('#scan').hidden=false;$('#schedule').textContent='本地服务运行时自动扫描';setInterval(poll,3000);await poll();}})();setInterval(()=>{if(!busy)refresh();},60000);
+
+function renderChain(c){
+ const overview=$('#chainOverview'),cards=$('#chainCards'),rules=$('#chainRules'),errors=$('#chainErrors'),review=$('#chainReviewItems');
+ for(const n of [overview,cards,rules,errors,review])n.replaceChildren();
+ $('#chainHistory').hidden=!c;$('#chainHistory').href='data/chain-review.json';
+ $('#chainNote').textContent=c?`${c.date} · ${c.retrospective?'历史重扫，不计事前成绩':c.status==='complete'?'当日完整事实与名单已冻结':'数据未完整，保持观察'} · ${c.note||'连板计算失败'}`:'该日期尚无连板快照；升级后的云端收盘扫描会自动生成。';
+ if(!c){cards.append(el('p','先保存真实每日名单，再统计次日表现。','note'));return;}
+ const m=c.metrics||{},s=c.sentiment||{};
+ row(overview,'市场状态',s.state||'证据不足',s.reason||'数据尚未完整');
+ row(overview,'涨停 / 跌停',`${m.limitCount??'—'} / ${m.downCount??'—'}`,m.complete?'已核验扫描范围内事实':'已核验下限；缺数据不等于无涨停');
+ row(overview,'最高连板',`${m.highestBoard??'—'} 板`,'主板与创业板分规则核验');
+ row(overview,'炸板率',pct(m.breakRate),'当日触板未封住 / 当日触板股数；封住后的开板次数另列');
+ row(overview,'昨日涨停反馈',pct(m.feedback),`昨日涨停池 ${m.previousLimitCount??'—'} 只 / 收盘到收盘`);
+ row(overview,'昨日晋级率',pct(m.promotionRate),`全市场有效覆盖 ${pct(c.coverage)}`);
+ const filter=$('#chainFilter').value,visible=(c.candidates||[]).filter(x=>filter==='all'||String(x.targetBoard)===filter||filter==='focus'&&['A','B'].includes(x.grade));
+ if(!visible.length)cards.append(el('p',c.status==='partial'?'当前无已核验候选；存在数据缺口，请查看异常。':'当前筛选范围没有候选。','note'));
+ const grades={A:'允许次日观察',B:'等待分歧确认',C:'只记录，证据不足或低分',D:'排除'};
+ for(const x of visible){
+  const card=el('article',undefined,'card'),head=el('div',undefined,'card-head'),title=el('div');title.append(el('div',x.name,'stock-name'),el('div',`${x.code} / ${x.segment} / ${x.route}`,'stock-meta'));
+  head.append(title,el('span',`${x.grade} · ${x.score}/100`,'tag'+(x.grade==='A'?' ok':'')));card.append(head,el('p',grades[x.grade]||'待核验'));
+  const values=el('div',undefined,'values');for(const [label,value]of [['实际收盘',num(x.close)],['成交额(亿)',num(x.amount/1e8)],['首次封板',x.firstTime||'—'],['开板次数',x.breaks??'—']]){const v=el('div');v.append(el('label',label),el('strong',String(value)));values.append(v);}card.append(values);
+  card.append(el('p',`题材：${x.themes?.map(t=>t.name).join('、')||'待核验'} / 换手率 ${Number.isFinite(x.turnoverRate)?num(x.turnoverRate)+'%':'未取得'} / 量能比 ${num(x.volumeRatio)}`));
+  if(x.hard?.length)card.append(el('p','排除：'+x.hard.join('；')));
+  if(x.missing?.length)card.append(el('p','缺失：'+x.missing.join('；')));
+  const d=el('details');d.append(el('summary','查看评分、买入与退出计划'));
+  for(const part of x.parts||[])row(d,part.label,`${part.points} / ${part.max}`);
+  d.append(el('p','等待模式：'+(x.plan?.patterns||[]).join(' / ')),el('p',`今日低点参考 ${num(x.plan?.referenceLow)}；次日涨停参考 ${num(x.plan?.nextLimitReference)}。`),el('p',x.plan?.note||''),el('p','盘中确认：竞价与板块承接 → 模式信号 → 写入买价上限、失效条件和风险预算 → 确认可成交 → 记录实际成交。'),el('p','退出：事前失效条件、次日预期失败与时间退出；当日买入受T+1约束，跌停未成交仍计持仓。'),el('p',x.executionStatus||'未成交'));card.append(d);cards.append(card);
+ }
+ for(const line of [`硬过滤：一字板、成交额低于 ${(c.settings?.minimumAmount??1e8)/1e8} 亿元、已覆盖题材涨停联动不足、退潮或冰点。未知数据列C，不补造结论。`,'评分：市场20、题材25、早封15、稳定15、量能15、成交10。缺项计0且保留缺失标签，分数不是胜率。','首板→二板：弱转强、分歧回封分别记录；二板→三板：核心接力单独记录。当前只做收盘准备，不用日线伪造盘中买点。','风险预算工具默认单笔账户风险0.5%、金额上限10%，仅为试验参数；同时满足股数和100股单位。计划风险无法保证实际损失。','私人账本记录事前计划、真实成交和未成交原因；校验T+1、计划最高买价与股数。完整平仓后扣实际费用统计净收益。','每日收盘冻结名单与市场快照；次日缺任何成员数据时不缩小分母，平均反馈保持未知。所有阈值均待盈利验证。'])rules.append(el('p',line));
+ const anomalies=[...(c.errors||[]),...(c.unresolved||[])];$('#chainErrorsLabel').textContent=`查看连板数据异常（${anomalies.length}）`;for(const e of anomalies)errors.append(el('p',`${e.code||e.name||''} ${e.error||e.reason||e}`));
+ const r=c.review||{};
+ if(!r.items?.length)review.append(el('p',r.reason||'没有可复盘的上一交易日名单。','note'));
+ else {row(review,`冻结日期 ${r.baseDate}`,`完整 ${r.validCount}/${r.cohortCount}`,`平均开盘 ${pct(r.averageOpening)} / 平均收盘 ${pct(r.averageClose)}（观察变化）`);for(const x of r.items)row(review,`${x.code} ${x.name}`,`开盘 ${pct(x.openingPremium)} / 收盘 ${pct(x.closeReturn)}`,`${x.route} / 昨日 ${x.grade} ${x.score}分 / ${x.executionStatus}`);}
+}

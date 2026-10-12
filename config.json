@@ -33,6 +33,25 @@
     "maxBoards": 30,
     "themeConcurrency": 4
   },
+  "chain": {
+    "minimumCoverage": 0.98,
+    "maxChecks": 250,
+    "maxCheckMinutes": 4,
+    "minimumAmount": 100000000,
+    "minimumThemeLimits": 3,
+    "minimumThemeCoverage": 0.95,
+    "earlyTime": "10:30:00",
+    "maximumBreaks": 3,
+    "minimumScore": 70,
+    "watchScore": 50,
+    "minimumVolumeRatio": 0.8,
+    "maximumVolumeRatio": 4,
+    "retreatDownCount": 15,
+    "retreatFeedback": -0.02,
+    "risingLimitCount": 40,
+    "risingPromotion": 0.3,
+    "iceLimitCount": 15
+  },
   "mainline": {
     "maxThemes": 20,
     "minimumMemberCoverage": 0.95,

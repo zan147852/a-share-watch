@@ -8,7 +8,7 @@ function buildBundle(root = __dirname) {
   const names = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], { cwd: root, encoding: 'utf8' }).split('\0').filter(Boolean);
   const files = {};
   for (const name of [...new Set(names)].sort()) {
-    if (name === 'project-bundle.json' || /^(public\/data|douyin-monitor\/(data|reports)|\.cache|qa|vendor|node_modules)\//.test(name)) continue;
+    if (name === 'project-bundle.json' || /^(public\/data|douyin-monitor\/(data|reports)|\.cache|\.private|qa|vendor|node_modules)\//.test(name)) continue;
     // Exclude secrets even if accidentally tracked; release checks also reject them.
     if (/(^|\/)(\.env(?:\..*)?|config\.local\.json)$|\.(pem|key|p12|pfx|log|zip)$/i.test(name)) continue;
     if (['cls-sample.html', 'cls-script-sample.js', 'build-icons.js'].includes(name)) continue;
