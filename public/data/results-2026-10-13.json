@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-13",
+  "version": "v0.2-eod-observation",
+  "generatedAt": "2026-10-12T16:52:36.097Z",
+  "priceBasis": "前复权计算结构，按目标日未复权收盘换算显示价格",
+  "mode": "收盘观察；不重现盘中全部信号",
+  "news": {
+    "status": "未配置自动消息核验",
+    "message": "消息真伪、首次公开时间和公司业务受益尚需核验"
+  },
+  "candidates": [],
+  "status": "awaiting_close",
+  "message": "尚未到北京时间15:20，不生成收盘名单"
+}

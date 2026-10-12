@@ -1,6 +1,12 @@
 {
-  "updatedAt": "2026-10-12T14:48:45.134Z",
+  "updatedAt": "2026-10-12T16:52:36.114Z",
   "dates": [
+    {
+      "date": "2026-10-13",
+      "status": "awaiting_close",
+      "candidateCount": 0,
+      "generatedAt": "2026-10-12T16:52:36.097Z"
+    },
     {
       "date": "2026-10-12",
       "status": "complete",
