@@ -1,10 +1,10 @@
 {
   "date": "2026-10-13",
-  "status": "awaiting_close",
-  "startedAt": "2026-10-12T16:52:36.097Z",
-  "phase": "尚未到北京时间15:20，不生成收盘名单",
-  "done": 0,
-  "total": 0,
-  "generatedAt": "2026-10-12T16:52:36.097Z",
-  "candidateCount": 0
+  "status": "complete",
+  "startedAt": "2026-10-13T15:10:53.095Z",
+  "phase": "收盘价格扫描完成，完整策略条件仍待核验",
+  "done": 4420,
+  "total": 4420,
+  "generatedAt": "2026-10-13T15:23:58.235Z",
+  "candidateCount": 9
 }
