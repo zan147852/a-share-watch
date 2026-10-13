@@ -25,7 +25,10 @@ jobs:
         with:
           node-version: '22'
       - name: 检查前端语法
-        run: node --check public/app.js
+        run: |
+          node --check public/app.js
+          node --check public/relay-rules.js
+          node --check public/relay-ui.js
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

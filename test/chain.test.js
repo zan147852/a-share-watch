@@ -30,9 +30,9 @@ test('缺市场数据不解释为冰点；情绪暂停优先于涨停数量',()=
  assert.equal(chain.sentiment({...m,limitCount:20},{state:'退潮'}).state,'修复');
 });
 test('候选板数表示今日事实，目标表示次日；缺项降低级别，低流动性/一字硬排除',()=>{
- const f={code:'600001',name:'测试',date:'2026-10-09',volumeRatio:1.5,capAsOf:'2026-10-09',amount:2e8},v={boardCount:1,close:11,low:10.3},pool={close:11,streak:1,amount:2e8,breaks:0,firstTime:'09:40:00',turnoverRate:5};
- const themes=[{id:'t',name:'测试题材',membershipDate:f.date,coverage:1,snapshot:{memberCodes:[f.code],complete:{firstBoards:true}},steps:[{key:'tide',limitCount:4}]}],emotion={state:'上升',allowTargetBoards:[2,3]},market={complete:true,coverage:1};
- const c=chain.evaluateCandidate(f,v,pool,themes,emotion,market);assert.equal(c.targetBoard,2);assert.equal(c.grade,'A');assert.equal(c.score,100);
+ const f={code:'600001',name:'测试',date:'2026-10-09',volumeRatio:1.5,capAsOf:'2026-10-09',amount:2e8},v={boardCount:1,close:11,low:10.3,isOnePrice:false},pool={close:11,streak:1,amount:2e8,breaks:0,firstTime:'09:40:00',turnoverRate:5};
+ const themes=[{id:'t',name:'测试题材',membershipDate:f.date,coverage:1,snapshot:{memberCodes:[f.code],complete:{firstBoards:true}},steps:[{key:'tide',limitCount:4}]}],emotion={state:'上升',allowTargetBoards:[2,3]},market={complete:true,coverage:1,limitCount:40,downCount:0,feedback:.02,promotionRate:.4};
+ const c=chain.evaluateCandidate(f,v,pool,themes,emotion,market);assert.equal(c.targetBoard,2);assert.equal(c.grade,'B');assert.equal(c.score,100);assert.ok(c.sequential.eodPassed);
  assert.equal(chain.evaluateCandidate(f,{...v,boardCount:2},{...pool,streak:2},themes,emotion,market).targetBoard,3);
  assert.equal(chain.evaluateCandidate(f,v,{...pool,breaks:null},themes,emotion,market).grade,'C');
  assert.equal(chain.evaluateCandidate(f,v,pool,[],emotion,market).grade,'C');
@@ -68,7 +68,12 @@ test('管线写出全市场快照、冻结完整报告、重跑不换名单、�
  const raw=rows([10,10,10,10,11]);store.write(path.join(root,'.cache','1.600001-2026-10-09-f1.json'),raw);
  provider.cachedDaily=async()=>raw;themeProvider.limitPool=async()=>({date:'2026-10-09',complete:false,items:[],error:'fixture无封板时间'});
  const config={scanner:{concurrency:1},chain:{}},feature={code:'600001',name:'测试',market:1,date:'2026-10-09',previousDate:'2026-10-08',previousPct:0,pct:.1,highReturn:.1,openingPremium:0,volumeRatio:1.5,amount:2e8,capAsOf:'2026-10-09'},options={root,out,date:'2026-10-09',previousDate:'2026-10-08',calendar,features:[feature],universe:[feature],totalUniverse:1,mainline:{themes:[]},config,now:new Date('2026-10-09T08:00:00Z')};
- const r=await scanner.build(options);assert.equal(r.status,'complete');assert.equal(r.candidates[0].targetBoard,2);assert.equal(r.candidates[0].grade,'C');assert.equal(store.read(path.join(out,r.snapshotFile)).features.length,1);
+ const r=await scanner.build(options);assert.equal(r.status,'complete');assert.equal(r.candidates[0].targetBoard,2);assert.equal(r.candidates[0].grade,'D');assert.equal(store.read(path.join(out,r.snapshotFile)).features.length,1);
  const frozen=await scanner.build({...options,features:[],now:new Date('2026-10-09T10:00:00Z')});assert.equal(frozen.frozenAt,r.frozenAt);assert.equal(frozen.candidates.length,1);
+ store.write(path.join(out,'chain-2026-10-09.json'),{...r,version:'v0.1-chain-observation'});
+ assert.equal((await scanner.build({...options,features:[]})).version,'v0.1-chain-observation');
+ fs.unlinkSync(path.join(out,'chain-2026-10-09.json'));
+ const high=rows([10,10,11,12.1,13.31]);store.write(path.join(root,'.cache','1.600001-2026-10-09-f1.json'),high);provider.cachedDaily=async()=>high;
+ const extended=await scanner.build({...options,features:[{...feature,previousPct:.1}]});assert.equal(extended.candidates[0].boardCount,3);assert.equal(extended.candidates[0].targetBoard,4);
  const partial=await scanner.build({...options,date:'2026-10-08',previousDate:'2026-09-30',features:[],totalUniverse:10});assert.equal(partial.status,'partial');assert.equal(partial.retrospective,true);
 });

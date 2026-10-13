@@ -50,7 +50,22 @@
     "retreatFeedback": -0.02,
     "risingLimitCount": 40,
     "risingPromotion": 0.3,
-    "iceLimitCount": 15
+    "iceLimitCount": 15,
+    "sequential": {
+      "minimumCoverage": 0.98,
+      "minimumLimits": 15,
+      "maximumDowns": 15,
+      "minimumFeedback": 0,
+      "minimumThemeLimits": 3,
+      "minimumAmount": 100000000,
+      "earlyTime": "10:30:00",
+      "maximumBreaks": 3,
+      "mainBoardOnly": true,
+      "positionCap": 3000,
+      "maxNewPositions": 1,
+      "riskFraction": 0.005,
+      "costReserve": 20
+    }
   },
   "mainline": {
     "maxThemes": 20,
