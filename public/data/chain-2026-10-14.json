@@ -1,0 +1,7545 @@
+{
+  "schema": 1,
+  "version": "v0.2-chain-observation",
+  "date": "2026-10-14",
+  "previousDate": "2026-10-13",
+  "generatedAt": "2026-10-14T13:08:59.526Z",
+  "frozenAt": "2026-10-14T13:08:59.526Z",
+  "retrospective": false,
+  "status": "partial",
+  "coverage": 0.9945701357466064,
+  "metrics": {
+    "scope": "主板与创业板；排除ST、退市与上市不足60交易日",
+    "coverage": 0.9945701357466064,
+    "complete": false,
+    "limitCount": 34,
+    "downCount": 12,
+    "highestBoard": 4,
+    "brokenCount": 30,
+    "breakRate": null,
+    "previousLimitCount": 65,
+    "feedback": null,
+    "promotionRate": null
+  },
+  "sentiment": {
+    "state": "证据不足",
+    "reason": "市场覆盖或昨日涨停反馈不完整",
+    "allowTargetBoards": [],
+    "definition": "初版规则标签，供次日研究；不是市场事实或胜率预测。"
+  },
+  "candidates": [
+    {
+      "code": "001299",
+      "name": "美能能源",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 55,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 10.92,
+      "low": 9.82,
+      "amount": 185901764,
+      "turnoverRate": 6.1688737869262695,
+      "volumeRatio": 2.9979860919856787,
+      "firstTime": "10:02:39",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 9.82,
+        "nextLimitReference": 12.01,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 1.86亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 10:02:39"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 0"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "002343",
+      "name": "慈文传媒",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 4,
+      "targetBoard": 5,
+      "route": "4板 → 5板观察",
+      "grade": "C",
+      "score": 55,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 8.1,
+      "low": 7.78,
+      "amount": 456744432,
+      "turnoverRate": 11.942584991455078,
+      "volumeRatio": 3.1508553083031074,
+      "firstTime": "09:30:03",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "高板分歧回封"
+        ],
+        "referenceLow": 7.78,
+        "nextLimitReference": 8.91,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 4 板 → 目标 5 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 4.57亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:30:03"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 0"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              },
+              {
+                "label": "高板连续缩量后首次放量开板",
+                "status": "pass",
+                "detail": "未触发此排除项"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "600391",
+      "name": "航发科技",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 55,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 42.66,
+      "low": 39.2,
+      "amount": 782791648,
+      "turnoverRate": 5.7934136390686035,
+      "volumeRatio": 1.4326463410432078,
+      "firstTime": "10:06:08",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_jght",
+          "name": "军工航天"
+        },
+        {
+          "id": "gn_gfjg",
+          "name": "国防军工"
+        },
+        {
+          "id": "gn_dfj",
+          "name": "大飞机"
+        }
+      ],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板分歧回封"
+        ],
+        "referenceLow": 39.2,
+        "nextLimitReference": 46.93,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 2 板 → 目标 3 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 7.83亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 10:06:08"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 0"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "600847",
+      "name": "万里股份",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 55,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 15.43,
+      "low": 13.27,
+      "amount": 163416815,
+      "turnoverRate": 7.336585998535156,
+      "volumeRatio": 1.6543102002630161,
+      "firstTime": "09:35:50",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板分歧回封"
+        ],
+        "referenceLow": 13.27,
+        "nextLimitReference": 16.97,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 2 板 → 目标 3 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 1.63亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:35:50"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 0"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "603258",
+      "name": "电魂网络",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 55,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 16.15,
+      "low": 14.95,
+      "amount": 177192522,
+      "turnoverRate": 4.626765251159668,
+      "volumeRatio": 2.2964490932498633,
+      "firstTime": "09:37:46",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 14.95,
+        "nextLimitReference": 17.77,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 1.77亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:37:46"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 0"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "002469",
+      "name": "三维化学",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 6.86,
+      "low": 6.43,
+      "amount": 169304456,
+      "turnoverRate": 3.9639313220977783,
+      "volumeRatio": 3.6542486457331798,
+      "firstTime": "09:31:57",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 6.43,
+        "nextLimitReference": 7.55,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 1.69亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:31:57"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 1"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "600252",
+      "name": "中恒集团",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 2.48,
+      "low": 2.23,
+      "amount": 478186336,
+      "turnoverRate": 6.169836044311523,
+      "volumeRatio": 2.253496828364629,
+      "firstTime": "09:39:07",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_ka",
+          "name": "抗癌"
+        }
+      ],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 2.23,
+        "nextLimitReference": 2.73,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 4.78亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:39:07"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 1"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "603533",
+      "name": "掌阅科技",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 29.92,
+      "low": 26.3,
+      "amount": 1933009088,
+      "turnoverRate": 15.279207229614258,
+      "volumeRatio": 1.3124135218125632,
+      "firstTime": "10:05:25",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 26.3,
+        "nextLimitReference": 32.91,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 19.33亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 10:05:25"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 1"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "603598",
+      "name": "引力传媒",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 21.91,
+      "low": 19.3,
+      "amount": 1152547088,
+      "turnoverRate": 20.213623046875,
+      "volumeRatio": 1.5201756222273692,
+      "firstTime": "10:27:56",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 19.3,
+        "nextLimitReference": 24.1,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 11.53亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 10:27:56"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 1"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "000823",
+      "name": "超声电子",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 24.55,
+      "low": 24.11,
+      "amount": 741429728,
+      "turnoverRate": 5.078347206115723,
+      "volumeRatio": 0.36619297335938755,
+      "firstTime": "09:25:00",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": true,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板分歧回封"
+        ],
+        "referenceLow": 24.11,
+        "nextLimitReference": 27.01,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 2 板 → 目标 3 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 7.41亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:25:00"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 1"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "002917",
+      "name": "金奥博",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 12.1,
+      "low": 11.56,
+      "amount": 280234144,
+      "turnoverRate": 8.964140892028809,
+      "volumeRatio": 5.119662953366739,
+      "firstTime": "09:30:18",
+      "breaks": 2,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_gfjg",
+          "name": "国防军工"
+        }
+      ],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板分歧回封"
+        ],
+        "referenceLow": 11.56,
+        "nextLimitReference": 13.31,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 2 板 → 目标 3 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 2.80亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:30:18"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 2"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "601188",
+      "name": "龙江交通",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "C",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 3.53,
+      "low": 3.38,
+      "amount": 679739936,
+      "turnoverRate": 14.809240341186523,
+      "volumeRatio": 8.178207150012183,
+      "firstTime": "09:30:04",
+      "breaks": 2,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_cxgg",
+          "name": "朝鲜改革"
+        }
+      ],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板分歧回封"
+        ],
+        "referenceLow": 3.38,
+        "nextLimitReference": 3.88,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 2 板 → 目标 3 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 6.80亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:30:04"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 2"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "603096",
+      "name": "新经典",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 4,
+      "targetBoard": 5,
+      "route": "4板 → 5板观察",
+      "grade": "C",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 23.07,
+      "low": 21.64,
+      "amount": 772933936,
+      "turnoverRate": 22.026334762573242,
+      "volumeRatio": 10.10295604591685,
+      "firstTime": "09:30:44",
+      "breaks": 3,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "高板分歧回封"
+        ],
+        "referenceLow": 21.64,
+        "nextLimitReference": 25.38,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 4 板 → 目标 5 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 7.73亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:30:44"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 3"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              },
+              {
+                "label": "高板连续缩量后首次放量开板",
+                "status": "pass",
+                "detail": "未触发此排除项"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "603656",
+      "name": "泰禾智能",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "C",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 19.06,
+      "low": 17.35,
+      "amount": 182574268,
+      "turnoverRate": 5.403326511383057,
+      "volumeRatio": 5.9380669189643775,
+      "firstTime": "10:13:55",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 17.35,
+        "nextLimitReference": 20.97,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 1.83亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 10:13:55"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 1"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "insufficient",
+        "firstBlock": "市场环境",
+        "summary": "证据不足"
+      }
+    },
+    {
+      "code": "000530",
+      "name": "冰山冷热",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "D",
+      "score": 55,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 6.3,
+      "low": 6.3,
+      "amount": 114023435,
+      "turnoverRate": 3.01590633392334,
+      "volumeRatio": 0.9013571902397045,
+      "firstTime": "09:25:00",
+      "breaks": 0,
+      "isOnePrice": true,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_spaq",
+          "name": "食品安全"
+        },
+        {
+          "id": "gn_zxsy",
+          "name": "振兴沈阳"
+        },
+        {
+          "id": "gn_drn",
+          "name": "地热能"
+        }
+      ],
+      "themeEvidence": {
+        "complete": true,
+        "name": "食品安全",
+        "limitCount": 1,
+        "membershipDate": "2026-10-14"
+      },
+      "hard": [
+        "题材联动：同题材收盘涨停",
+        "封板与成交：排除一字板"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板分歧回封"
+        ],
+        "referenceLow": 6.3,
+        "nextLimitReference": 6.93,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 2 板 → 目标 3 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "pass",
+                "detail": "食品安全"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "fail",
+                "detail": "至少 3 只，实际 1"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 1.14亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:25:00"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 0"
+              },
+              {
+                "label": "排除一字板",
+                "status": "fail",
+                "detail": "昨日一字板，跳过"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "300006",
+      "name": "莱美药业",
+      "segment": "创业板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 55,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 7.9,
+      "low": 6.71,
+      "amount": 1284272768,
+      "turnoverRate": 16.291168212890625,
+      "volumeRatio": 1.549463200546258,
+      "firstTime": "09:39:24",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_cjxj",
+          "name": "超级细菌"
+        },
+        {
+          "id": "gn_ka",
+          "name": "抗癌"
+        }
+      ],
+      "themeEvidence": {
+        "complete": true,
+        "name": "超级细菌",
+        "limitCount": 1,
+        "membershipDate": "2026-10-14"
+      },
+      "hard": [
+        "目标板数：普通主板",
+        "题材联动：同题材收盘涨停"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 6.71,
+        "nextLimitReference": 9.48,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "fail",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "pass",
+                "detail": "超级细菌"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "fail",
+                "detail": "至少 3 只，实际 1"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 12.84亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:39:24"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 0"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "目标板数",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "000601",
+      "name": "韶能股份",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 48,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 6.82,
+      "low": 6.2,
+      "amount": 1071692048,
+      "turnoverRate": 15.16733169555664,
+      "volumeRatio": 2.2279992707957024,
+      "firstTime": "09:46:57",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_dtjj",
+          "name": "低碳经济"
+        },
+        {
+          "id": "gn_cdz",
+          "name": "充电桩"
+        }
+      ],
+      "themeEvidence": {
+        "complete": true,
+        "name": "低碳经济",
+        "limitCount": 2,
+        "membershipDate": "2026-10-14"
+      },
+      "hard": [
+        "题材联动：同题材收盘涨停"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 6.2,
+        "nextLimitReference": 7.5,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "pass",
+                "detail": "低碳经济"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "fail",
+                "detail": "至少 3 只，实际 2"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 10.72亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:46:57"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 1"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "001318",
+      "name": "阳光乳业",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "D",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 15.43,
+      "low": 14.66,
+      "amount": 617584592,
+      "turnoverRate": 14.242321014404297,
+      "volumeRatio": 1.9130406270404046,
+      "firstTime": "09:25:00",
+      "breaks": 4,
+      "isOnePrice": false,
+      "isT": true,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [
+        "封板与成交：盘中开板次数"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板分歧回封"
+        ],
+        "referenceLow": 14.66,
+        "nextLimitReference": 16.97,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 2 板 → 目标 3 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 6.18亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:25:00"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "fail",
+                "detail": "不超过 3 次，实际 4"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "002029",
+      "name": "七 匹 狼",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 10.58,
+      "low": 9.25,
+      "amount": 473233168,
+      "turnoverRate": 7.123218059539795,
+      "volumeRatio": 1.022442335635421,
+      "firstTime": "13:17:15",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [
+        "封板与成交：首次封板时间"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 9.25,
+        "nextLimitReference": 11.64,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 4.73亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "fail",
+                "detail": "不晚于 10:30:00，实际 13:17:15"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 0"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "002552",
+      "name": "宝鼎科技",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 45.8,
+      "low": 45.8,
+      "amount": 220861340,
+      "turnoverRate": 1.3086179494857788,
+      "volumeRatio": 0.3605172225603055,
+      "firstTime": "09:25:00",
+      "breaks": 0,
+      "isOnePrice": true,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_jmrh",
+          "name": "军民融合"
+        },
+        {
+          "id": "gn_fd",
+          "name": "风电"
+        }
+      ],
+      "themeEvidence": {
+        "complete": true,
+        "name": "风电",
+        "limitCount": 1,
+        "membershipDate": "2026-10-14"
+      },
+      "hard": [
+        "题材联动：同题材收盘涨停",
+        "封板与成交：排除一字板"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 45.8,
+        "nextLimitReference": 50.38,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "pass",
+                "detail": "风电"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "fail",
+                "detail": "至少 3 只，实际 1"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 2.21亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:25:00"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 0"
+              },
+              {
+                "label": "排除一字板",
+                "status": "fail",
+                "detail": "昨日一字板，跳过"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "600121",
+      "name": "郑州煤电",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 5.86,
+      "low": 5.18,
+      "amount": 1367294032,
+      "turnoverRate": 19.64382553100586,
+      "volumeRatio": 1.3052593932461032,
+      "firstTime": "09:47:19",
+      "breaks": 4,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [
+        "封板与成交：盘中开板次数"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 5.18,
+        "nextLimitReference": 6.45,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 13.67亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:47:19"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "fail",
+                "detail": "不超过 3 次，实际 4"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "603968",
+      "name": "醋化股份",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 3,
+      "targetBoard": 4,
+      "route": "3板 → 4板观察",
+      "grade": "D",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 15.8,
+      "low": 14.58,
+      "amount": 596555872,
+      "turnoverRate": 18.76021385192871,
+      "volumeRatio": 1.711898216740151,
+      "firstTime": "09:30:09",
+      "breaks": 4,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [
+        "封板与成交：盘中开板次数"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "高板分歧回封"
+        ],
+        "referenceLow": 14.58,
+        "nextLimitReference": 17.38,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 3 板 → 目标 4 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 5.97亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:30:09"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "fail",
+                "detail": "不超过 3 次，实际 4"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              },
+              {
+                "label": "高板连续缩量后首次放量开板",
+                "status": "pass",
+                "detail": "未触发此排除项"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "603992",
+      "name": "松霖科技",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 40,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 24.61,
+      "low": 21.83,
+      "amount": 454397888,
+      "turnoverRate": 4.3998589515686035,
+      "volumeRatio": 2.8337752657409343,
+      "firstTime": "14:52:24",
+      "breaks": 0,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [
+        "封板与成交：首次封板时间"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 21.83,
+        "nextLimitReference": 27.07,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 4.54亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "fail",
+                "detail": "不晚于 10:30:00，实际 14:52:24"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 0"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "000573",
+      "name": "粤宏远Ａ",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 4.33,
+      "low": 3.91,
+      "amount": 213746897,
+      "turnoverRate": 8.066120147705078,
+      "volumeRatio": 3.0577083038687145,
+      "firstTime": "10:57:57",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [
+        "封板与成交：首次封板时间"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 3.91,
+        "nextLimitReference": 4.76,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 2.14亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "fail",
+                "detail": "不晚于 10:30:00，实际 10:57:57"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 1"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "300299",
+      "name": "富春股份",
+      "segment": "创业板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 6.88,
+      "low": 5.63,
+      "amount": 1228542848,
+      "turnoverRate": 27.04808807373047,
+      "volumeRatio": 9.425506492771321,
+      "firstTime": "10:24:24",
+      "breaks": 3,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_5Ggn",
+          "name": "5G概念"
+        }
+      ],
+      "themeEvidence": {
+        "complete": true,
+        "name": "5G概念",
+        "limitCount": 1,
+        "membershipDate": "2026-10-14"
+      },
+      "hard": [
+        "目标板数：普通主板",
+        "题材联动：同题材收盘涨停"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 5.63,
+        "nextLimitReference": 8.26,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "fail",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "pass",
+                "detail": "5G概念"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "fail",
+                "detail": "至少 3 只，实际 1"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 12.29亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 10:24:24"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 3"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "目标板数",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "600097",
+      "name": "开创国际",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 10.2,
+      "low": 9.33,
+      "amount": 139364473,
+      "turnoverRate": 5.7107977867126465,
+      "volumeRatio": 4.866931718497977,
+      "firstTime": "09:31:38",
+      "breaks": 2,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_sygg",
+          "name": "水域改革"
+        },
+        {
+          "id": "gn_scp1",
+          "name": "水产品"
+        }
+      ],
+      "themeEvidence": {
+        "complete": true,
+        "name": "水域改革",
+        "limitCount": 2,
+        "membershipDate": "2026-10-14"
+      },
+      "hard": [
+        "题材联动：同题材收盘涨停"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 9.33,
+        "nextLimitReference": 11.22,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "pass",
+                "detail": "水域改革"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "fail",
+                "detail": "至少 3 只，实际 2"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 1.39亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:31:38"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 2"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "600202",
+      "name": "哈空调",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 2,
+      "targetBoard": 3,
+      "route": "二板 → 三板观察",
+      "grade": "D",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 6.15,
+      "low": 5.75,
+      "amount": 352555568,
+      "turnoverRate": 15.012779235839844,
+      "volumeRatio": 5.636143728760442,
+      "firstTime": "09:25:00",
+      "breaks": 1,
+      "isOnePrice": false,
+      "isT": true,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_dtjj",
+          "name": "低碳经济"
+        },
+        {
+          "id": "gn_hdhn",
+          "name": "核电核能"
+        },
+        {
+          "id": "gn_cxgg",
+          "name": "朝鲜改革"
+        }
+      ],
+      "themeEvidence": {
+        "complete": true,
+        "name": "低碳经济",
+        "limitCount": 2,
+        "membershipDate": "2026-10-14"
+      },
+      "hard": [
+        "题材联动：同题材收盘涨停"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "三板分歧回封"
+        ],
+        "referenceLow": 5.75,
+        "nextLimitReference": 6.77,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 2 板 → 目标 3 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "pass",
+                "detail": "低碳经济"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "fail",
+                "detail": "至少 3 只，实际 2"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 3.53亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:25:00"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 1"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "601858",
+      "name": "中国科传",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 33,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 8,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 26.11,
+      "low": 23.45,
+      "amount": 912508800,
+      "turnoverRate": 4.559430122375488,
+      "volumeRatio": 2.3315099897922087,
+      "firstTime": "11:01:08",
+      "breaks": 2,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [
+        "封板与成交：首次封板时间"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 23.45,
+        "nextLimitReference": 28.72,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 9.13亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "fail",
+                "detail": "不晚于 10:30:00，实际 11:01:08"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 2"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "002696",
+      "name": "百洋股份",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 4,
+      "targetBoard": 5,
+      "route": "4板 → 5板观察",
+      "grade": "D",
+      "score": 30,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 0,
+          "max": 10
+        }
+      ],
+      "close": 9.75,
+      "low": 9.75,
+      "amount": 32451120,
+      "turnoverRate": 0.9957311153411865,
+      "volumeRatio": 0.14738168681911856,
+      "firstTime": "09:25:00",
+      "breaks": 0,
+      "isOnePrice": true,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_sygg",
+          "name": "水域改革"
+        },
+        {
+          "id": "gn_scp1",
+          "name": "水产品"
+        }
+      ],
+      "themeEvidence": {
+        "complete": true,
+        "name": "水域改革",
+        "limitCount": 2,
+        "membershipDate": "2026-10-14"
+      },
+      "hard": [
+        "题材联动：同题材收盘涨停",
+        "封板与成交：目标日成交额",
+        "封板与成交：排除一字板"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "高板分歧回封"
+        ],
+        "referenceLow": 9.75,
+        "nextLimitReference": 10.73,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 4 板 → 目标 5 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "pass",
+                "detail": "水域改革"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "fail",
+                "detail": "至少 3 只，实际 2"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "fail",
+                "detail": "至少 1.00 亿元，实际 0.32亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:25:00"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 0"
+              },
+              {
+                "label": "排除一字板",
+                "status": "fail",
+                "detail": "昨日一字板，跳过"
+              },
+              {
+                "label": "高板连续缩量后首次放量开板",
+                "status": "pass",
+                "detail": "未触发此排除项"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "605189",
+      "name": "富春染织",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 30,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 0,
+          "max": 10
+        }
+      ],
+      "close": 16.23,
+      "low": 16.23,
+      "amount": 96853921,
+      "turnoverRate": 2.5049164295196533,
+      "volumeRatio": 0.7998691815267159,
+      "firstTime": "09:25:01",
+      "breaks": 0,
+      "isOnePrice": true,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [
+        "封板与成交：目标日成交额",
+        "封板与成交：排除一字板"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 16.23,
+        "nextLimitReference": 17.85,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "fail",
+                "detail": "至少 1.00 亿元，实际 0.97亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "pass",
+                "detail": "不晚于 10:30:00，实际 09:25:01"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "pass",
+                "detail": "不超过 3 次，实际 0"
+              },
+              {
+                "label": "排除一字板",
+                "status": "fail",
+                "detail": "昨日一字板，跳过"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "001216",
+      "name": "华瓷股份",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 25,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 23.99,
+      "low": 20.25,
+      "amount": 985457936,
+      "turnoverRate": 17.98068618774414,
+      "volumeRatio": 1.4624563234889014,
+      "firstTime": "14:18:06",
+      "breaks": 7,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [
+        "封板与成交：首次封板时间",
+        "封板与成交：盘中开板次数"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 20.25,
+        "nextLimitReference": 26.39,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 9.85亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "fail",
+                "detail": "不晚于 10:30:00，实际 14:18:06"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "fail",
+                "detail": "不超过 3 次，实际 7"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "600408",
+      "name": "安泰集团",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 25,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 4.06,
+      "low": 3.55,
+      "amount": 1123247872,
+      "turnoverRate": 29.087509155273438,
+      "volumeRatio": 1.7753816349396863,
+      "firstTime": "13:49:40",
+      "breaks": 9,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [
+        {
+          "id": "gn_zmgn",
+          "name": "摘帽概念"
+        }
+      ],
+      "themeEvidence": {
+        "complete": true,
+        "name": "摘帽概念",
+        "limitCount": 1,
+        "membershipDate": "2026-10-14"
+      },
+      "hard": [
+        "题材联动：同题材收盘涨停",
+        "封板与成交：首次封板时间",
+        "封板与成交：盘中开板次数"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 3.55,
+        "nextLimitReference": 4.47,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "pass",
+                "detail": "摘帽概念"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "fail",
+                "detail": "至少 3 只，实际 1"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 11.23亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "fail",
+                "detail": "不晚于 10:30:00，实际 13:49:40"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "fail",
+                "detail": "不超过 3 次，实际 9"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    },
+    {
+      "code": "601811",
+      "name": "新华文轩",
+      "segment": "主板",
+      "date": "2026-10-14",
+      "boardCount": 1,
+      "targetBoard": 2,
+      "route": "首板 → 二板观察",
+      "grade": "D",
+      "score": 25,
+      "parts": [
+        {
+          "label": "市场适配",
+          "points": 0,
+          "max": 20
+        },
+        {
+          "label": "题材联动",
+          "points": 0,
+          "max": 25
+        },
+        {
+          "label": "早盘封板",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "封板稳定",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "量能适中",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "成交容量",
+          "points": 10,
+          "max": 10
+        }
+      ],
+      "close": 23.25,
+      "low": 19.2,
+      "amount": 1427454352,
+      "turnoverRate": 8.341191291809082,
+      "volumeRatio": 1.2072323331274193,
+      "firstTime": "11:07:05",
+      "breaks": 14,
+      "isOnePrice": false,
+      "isT": false,
+      "highBoardRisk": false,
+      "themes": [],
+      "themeEvidence": {
+        "complete": false,
+        "name": null,
+        "limitCount": null,
+        "membershipDate": null
+      },
+      "hard": [
+        "封板与成交：首次封板时间",
+        "封板与成交：盘中开板次数"
+      ],
+      "missing": [
+        "市场环境：涨跌停与前日反馈完整",
+        "市场环境：晋级数据完整",
+        "市场环境：昨日涨停平均反馈",
+        "市场环境：收盘涨停数量",
+        "市场环境：收盘跌停数量",
+        "题材联动：目标日题材成分与涨停核验",
+        "题材联动：同题材收盘涨停"
+      ],
+      "plan": {
+        "status": "盘中条件待验证",
+        "patterns": [
+          "二板分歧回封"
+        ],
+        "referenceLow": 19.2,
+        "nextLimitReference": 25.58,
+        "note": "参考低点不是自动止损；次日除权需重算涨停价。买入价、失效价、股数和可成交性需在盘中信号时确定。"
+      },
+      "executionStatus": "未产生盘中信号，未成交",
+      "sequential": {
+        "version": "v0.2-relay-sequential",
+        "stages": [
+          {
+            "key": "route",
+            "name": "目标板数",
+            "status": "pass",
+            "checks": [
+              {
+                "label": "连续收盘涨停板数",
+                "status": "pass",
+                "detail": "昨日 1 板 → 目标 2 板"
+              },
+              {
+                "label": "普通主板",
+                "status": "pass",
+                "detail": "初期仅做普通沪深主板"
+              }
+            ]
+          },
+          {
+            "key": "market",
+            "name": "市场环境",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "行情覆盖",
+                "status": "pass",
+                "detail": "至少 98%，实际 99.46%"
+              },
+              {
+                "label": "涨跌停与前日反馈完整",
+                "status": "unknown",
+                "detail": "缺数据，不能推断完整环境"
+              },
+              {
+                "label": "晋级数据完整",
+                "status": "unknown",
+                "detail": "未知"
+              },
+              {
+                "label": "昨日涨停平均反馈",
+                "status": "unknown",
+                "detail": "不低于 0.00%，实际 未知"
+              },
+              {
+                "label": "收盘涨停数量",
+                "status": "unknown",
+                "detail": "至少 15 只；已核验 34 只（下限）"
+              },
+              {
+                "label": "收盘跌停数量",
+                "status": "unknown",
+                "detail": "少于 15 只；已核验 12 只（下限）"
+              },
+              {
+                "label": "跌停下限未触线",
+                "status": "pass",
+                "detail": "已核验跌停 ≥15 时直接暂停"
+              }
+            ]
+          },
+          {
+            "key": "theme",
+            "name": "题材联动",
+            "status": "unknown",
+            "checks": [
+              {
+                "label": "目标日题材成分与涨停核验",
+                "status": "unknown",
+                "detail": "缺少完整的产业题材证据"
+              },
+              {
+                "label": "同题材收盘涨停",
+                "status": "unknown",
+                "detail": "至少 3 只，实际 未知"
+              }
+            ]
+          },
+          {
+            "key": "stock",
+            "name": "封板与成交",
+            "status": "fail",
+            "checks": [
+              {
+                "label": "目标日成交额",
+                "status": "pass",
+                "detail": "至少 1.00 亿元，实际 14.27亿元"
+              },
+              {
+                "label": "首次封板时间",
+                "status": "fail",
+                "detail": "不晚于 10:30:00，实际 11:07:05"
+              },
+              {
+                "label": "盘中开板次数",
+                "status": "fail",
+                "detail": "不超过 3 次，实际 14"
+              },
+              {
+                "label": "排除一字板",
+                "status": "pass",
+                "detail": "昨日非一字板"
+              }
+            ]
+          },
+          {
+            "key": "intraday",
+            "name": "盘中回封确认",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "业务、催化与实时题材",
+                "status": "pending",
+                "detail": "核实公司业务与催化依据；记录另外至少2只题材股高于昨收；核心连板未明显走弱"
+              },
+              {
+                "label": "真实回封过程",
+                "status": "pending",
+                "detail": "记录触板 → 板下成交 → 回到实际涨停价且出现新封单的时间；日线不提供触发信号"
+              }
+            ]
+          },
+          {
+            "key": "plan",
+            "name": "仓位与退出计划",
+            "status": "pending",
+            "checks": [
+              {
+                "label": "事前计划",
+                "status": "pending",
+                "detail": "每只金额上限 3000 元、每日最多新买 1 只；100股整数单位；填写失效位、次日与时间退出条件"
+              }
+            ]
+          }
+        ],
+        "eodPassed": false,
+        "status": "excluded",
+        "firstBlock": "市场环境",
+        "summary": "规则排除"
+      }
+    }
+  ],
+  "review": {
+    "status": "pending",
+    "items": [],
+    "reason": "没有上一交易日事前冻结的完整名单；历史重扫不计成绩",
+    "label": "观察反馈，非交易收益"
+  },
+  "unresolved": [
+    {
+      "code": "000668",
+      "name": "荣丰控股",
+      "reason": "复核缺失、前一交易日缺失或连板窗口不完整"
+    },
+    {
+      "code": "002813",
+      "name": "路畅科技",
+      "reason": "停牌、缺日线或价量无效"
+    },
+    {
+      "code": "002860",
+      "name": "星帅尔",
+      "reason": "停牌、缺日线或价量无效"
+    }
+  ],
+  "errors": [],
+  "settings": {
+    "minimumCoverage": 0.98,
+    "maxChecks": 250,
+    "maxCheckMinutes": 4,
+    "minimumAmount": 100000000,
+    "minimumThemeLimits": 3,
+    "minimumThemeCoverage": 0.95,
+    "earlyTime": "10:30:00",
+    "maximumBreaks": 3,
+    "minimumScore": 70,
+    "watchScore": 50,
+    "minimumVolumeRatio": 0.8,
+    "maximumVolumeRatio": 4,
+    "retreatDownCount": 15,
+    "retreatFeedback": -0.02,
+    "risingLimitCount": 40,
+    "risingPromotion": 0.3,
+    "iceLimitCount": 15,
+    "sequential": {
+      "minimumCoverage": 0.98,
+      "minimumLimits": 15,
+      "maximumDowns": 15,
+      "minimumFeedback": 0,
+      "minimumThemeLimits": 3,
+      "minimumAmount": 100000000,
+      "earlyTime": "10:30:00",
+      "maximumBreaks": 3,
+      "mainBoardOnly": true,
+      "positionCap": 3000,
+      "maxNewPositions": 1,
+      "riskFraction": 0.005,
+      "costReserve": 20
+    }
+  },
+  "snapshotFile": "market-snapshot-2026-10-14.json",
+  "note": "v0.2顺序筛选：B盘后通过、待人工盘中复核；C缺项；D排除。研究分不是胜率，未产生盘中信号或成交。"
+}
