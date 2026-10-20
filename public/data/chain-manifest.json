@@ -1,6 +1,11 @@
 {
-  "updatedAt": "2026-10-19T15:00:02.702Z",
+  "updatedAt": "2026-10-20T13:16:40.799Z",
   "dates": [
+    {
+      "date": "2026-10-20",
+      "status": "partial",
+      "candidateCount": 39
+    },
     {
       "date": "2026-10-19",
       "status": "partial",
