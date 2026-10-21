@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-20",
+  "date": "2026-10-21",
   "status": "partial",
-  "startedAt": "2026-10-20T12:49:36.010Z",
+  "startedAt": "2026-10-21T13:02:44.897Z",
   "phase": "部分数据未完成，不能解读为全市场筛选结果",
   "done": 4421,
   "total": 4421,
-  "generatedAt": "2026-10-20T13:16:40.800Z",
-  "candidateCount": 4
+  "generatedAt": "2026-10-21T13:27:47.411Z",
+  "candidateCount": 1
 }
