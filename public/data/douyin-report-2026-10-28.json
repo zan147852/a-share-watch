@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-28",
+  "generatedAt": "2026-10-27T19:17:38.723Z",
+  "status": "partial",
+  "collection": {
+    "status": "missing_token",
+    "records": [],
+    "errors": [
+      "尚未配置抖音应用凭证；请配置 DOUYIN_CLIENT_KEY 与 DOUYIN_CLIENT_SECRET"
+    ]
+  },
+  "summary": {
+    "newRecords": 0,
+    "analyzed": 0,
+    "watchlist": 0,
+    "pending": 0
+  },
+  "items": [],
+  "limitations": [
+    "抖音搜索结果不保证覆盖指定作者全部作品",
+    "观点仅用于研究观察，不自动买卖",
+    "评分规则尚未经过盈利验证"
+  ],
+  "push": {
+    "status": "disabled",
+    "message": "未配置微信推送"
+  }
+}
