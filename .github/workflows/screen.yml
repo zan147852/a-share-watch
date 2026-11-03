@@ -51,6 +51,10 @@ jobs:
       - name: 保存结果和状态
         env:
           GITHUB_REPOSITORY: ${{ github.repository }}
+          # Transient HTTP 408 / send-pack disconnects are retried. Rebase
+          # conflicts and auth errors fail on the first attempt.
+          PUSH_MAX_ATTEMPTS: '5'
+          PUSH_RETRY_DELAY_SECONDS: '10'
         run: |
           node -e 'require("fs").writeFileSync("public/data/site.json",JSON.stringify({repository:process.env.GITHUB_REPOSITORY}))'
           git config user.name "github-actions[bot]"
@@ -60,9 +64,7 @@ jobs:
             git commit -m "Update daily screen results"
             # A program release may have landed while the data scan was running.
             # Reapply only this data commit; real conflicts stop instead of overwriting.
-            git fetch origin main
-            git rebase origin/main
-            git push
+            bash scripts/push-data-commit.sh
           fi
       - uses: actions/upload-artifact@v4
         with:
