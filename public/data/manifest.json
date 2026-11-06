@@ -1,11 +1,12 @@
 {
-  "updatedAt": "2026-11-05T17:27:35.956Z",
+  "updatedAt": "2026-11-06T15:40:35.166Z",
   "dates": [
     {
       "date": "2026-11-06",
-      "status": "awaiting_close",
-      "candidateCount": 0,
-      "generatedAt": "2026-11-05T16:58:36.467Z"
+      "status": "partial",
+      "candidateCount": 6,
+      "generatedAt": "2026-11-06T15:40:35.084Z",
+      "coverage": 0.8731630115306354
     },
     {
       "date": "2026-11-05",
