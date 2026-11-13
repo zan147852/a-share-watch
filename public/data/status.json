@@ -1,10 +1,10 @@
 {
   "date": "2026-11-13",
-  "status": "awaiting_close",
-  "startedAt": "2026-11-12T16:06:00.597Z",
-  "phase": "尚未到北京时间15:20，不生成收盘名单",
-  "done": 0,
-  "total": 0,
-  "generatedAt": "2026-11-12T16:06:00.597Z",
-  "candidateCount": 0
+  "status": "partial",
+  "startedAt": "2026-11-13T15:33:04.951Z",
+  "phase": "部分数据未完成，不能解读为全市场筛选结果",
+  "done": 4423,
+  "total": 4423,
+  "generatedAt": "2026-11-13T15:57:49.388Z",
+  "candidateCount": 15
 }
