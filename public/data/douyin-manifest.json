@@ -1,6 +1,10 @@
 {
-  "updatedAt": "2026-11-12T21:22:24.994Z",
+  "updatedAt": "2026-11-13T20:48:21.795Z",
   "dates": [
+    {
+      "date": "2026-11-14",
+      "report": "douyin-report-2026-11-14.json"
+    },
     {
       "date": "2026-11-13",
       "report": "douyin-report-2026-11-13.json"
