@@ -1,10 +1,10 @@
 {
-  "date": "2026-11-20",
+  "date": "2026-11-21",
   "status": "awaiting_close",
-  "startedAt": "2026-11-19T16:41:04.946Z",
+  "startedAt": "2026-11-20T16:16:42.118Z",
   "phase": "尚未到北京时间15:20，不生成收盘名单",
   "done": 0,
   "total": 0,
-  "generatedAt": "2026-11-19T16:41:04.946Z",
+  "generatedAt": "2026-11-20T16:16:42.118Z",
   "candidateCount": 0
 }
